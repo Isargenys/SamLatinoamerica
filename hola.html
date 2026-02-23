@@ -1,0 +1,2968 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAM Latinoamérica | Garantías Extendidas y Asistencias</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== CSS VARIABLES ===== */
+        :root {
+            --turquesa: #00B4D8;
+            --turquesa-dark: #0096B7;
+            --turquesa-light: #90E0EF;
+            --turquesa-glow: rgba(0, 180, 216, 0.3);
+            --gris-oscuro: #1A1A2E;
+            --gris-medio: #2D2D44;
+            --gris-claro: #6B7280;
+            --blanco: #FFFFFF;
+            --blanco-off: #F8FAFB;
+            --bg-section: #F1F5F9;
+            --gradient-hero: linear-gradient(135deg, #0F172A 0%, #1A1A2E 40%, #162032 100%);
+            --gradient-turquesa: linear-gradient(135deg, #00B4D8, #0096B7);
+            --gradient-card: linear-gradient(145deg, #FFFFFF 0%, #F8FAFB 100%);
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+            --shadow-md: 0 8px 30px rgba(0,0,0,0.08);
+            --shadow-lg: 0 20px 60px rgba(0,0,0,0.12);
+            --shadow-turquesa: 0 8px 30px rgba(0, 180, 216, 0.25);
+            --radius: 16px;
+            --radius-sm: 10px;
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--gris-oscuro);
+            line-height: 1.7;
+            background: var(--blanco);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        @keyframes countUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== HEADER / NAVBAR ===== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .header.scrolled {
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--gris-oscuro);
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--gradient-turquesa);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 900;
+            font-size: 1.1rem;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--turquesa);
+        }
+
+        .logo small {
+            display: block;
+            font-size: 0.55rem;
+            font-weight: 500;
+            color: var(--gris-claro);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: -2px;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            padding: 8px 18px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--gris-medio);
+            border-radius: 8px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--turquesa);
+            background: rgba(0, 180, 216, 0.06);
+        }
+
+        .nav-menu a.active {
+            color: var(--turquesa);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background: var(--gradient-turquesa);
+            color: white;
+            box-shadow: var(--shadow-turquesa);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0, 180, 216, 0.35);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--turquesa);
+            border: 2px solid var(--turquesa);
+        }
+
+        .btn-secondary:hover {
+            background: var(--turquesa);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--gris-oscuro);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            background: #20BD5A;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(37, 211, 102, 0.4);
+        }
+
+        .nav-cta {
+            margin-left: 12px;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 28px;
+            height: 2.5px;
+            background: var(--gris-oscuro);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--gradient-hero);
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, var(--turquesa-glow) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: pulse 6s infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 180, 216, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: pulse 8s infinite reverse;
+        }
+
+        .hero-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-content {
+            animation: fadeInLeft 1s ease forwards;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            background: rgba(0, 180, 216, 0.1);
+            border: 1px solid rgba(0, 180, 216, 0.2);
+            border-radius: 50px;
+            color: var(--turquesa-light);
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 28px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .hero-badge i {
+            font-size: 0.7rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--blanco);
+            margin-bottom: 24px;
+            line-height: 1.1;
+        }
+
+        .hero h1 .highlight {
+            background: var(--gradient-turquesa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 40px;
+            max-width: 520px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-visual {
+            position: relative;
+            animation: fadeInRight 1s ease 0.3s forwards;
+            opacity: 0;
+        }
+
+        .hero-card-main {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px;
+            position: relative;
+        }
+
+        .hero-card-main .card-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-turquesa);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-turquesa);
+        }
+
+        .hero-card-main h3 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+
+        .hero-card-main p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+        }
+
+        .hero-floating-card {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            padding: 20px 24px;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .hero-floating-card.card-1 {
+            top: -30px;
+            right: -20px;
+            animation-delay: 0s;
+        }
+
+        .hero-floating-card.card-2 {
+            bottom: -20px;
+            left: -30px;
+            animation-delay: 2s;
+        }
+
+        .hero-floating-card .mini-stat {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .hero-floating-card .mini-stat .stat-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--gradient-turquesa);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .hero-floating-card .mini-stat .stat-text strong {
+            display: block;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+        }
+
+        .hero-floating-card .mini-stat .stat-text span {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.75rem;
+        }
+
+        /* ===== TRUST / METRICS SECTION ===== */
+        .trust-section {
+            padding: 100px 0;
+            background: var(--blanco);
+            position: relative;
+        }
+
+        .trust-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0, 180, 216, 0.2), transparent);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--turquesa);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 16px;
+        }
+
+        .section-label::before,
+        .section-label::after {
+            content: '';
+            width: 30px;
+            height: 2px;
+            background: var(--turquesa);
+            border-radius: 2px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--gris-oscuro);
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gris-claro);
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .trust-card {
+            text-align: center;
+            padding: 48px 32px;
+            background: var(--gradient-card);
+            border-radius: var(--radius);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .trust-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-turquesa);
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
+        }
+
+        .trust-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .trust-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .trust-card .trust-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(0, 180, 216, 0.08);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 2rem;
+            color: var(--turquesa);
+            transition: var(--transition);
+        }
+
+        .trust-card:hover .trust-icon {
+            background: var(--gradient-turquesa);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .trust-card .trust-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--gris-oscuro);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .trust-card .trust-number .plus {
+            color: var(--turquesa);
+        }
+
+        .trust-card .trust-label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gris-medio);
+            margin-bottom: 8px;
+        }
+
+        .trust-card .trust-desc {
+            font-size: 0.85rem;
+            color: var(--gris-claro);
+        }
+
+        /* ===== BENEFITS SECTION ===== */
+        .benefits-section {
+            padding: 100px 0;
+            background: var(--bg-section);
+            position: relative;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 40px 28px;
+            border-radius: var(--radius);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(0, 180, 216, 0.2);
+        }
+
+        .benefit-card .benefit-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: rgba(0, 180, 216, 0.08);
+            position: absolute;
+            top: 16px;
+            right: 20px;
+        }
+
+        .benefit-card .benefit-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(0, 180, 216, 0.08);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: var(--turquesa);
+            margin-bottom: 24px;
+            transition: var(--transition);
+        }
+
+        .benefit-card:hover .benefit-icon {
+            background: var(--gradient-turquesa);
+            color: white;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--gris-oscuro);
+            margin-bottom: 12px;
+        }
+
+        .benefit-card p {
+            font-size: 0.9rem;
+            color: var(--gris-claro);
+            line-height: 1.7;
+        }
+
+        /* ===== PRODUCTS SECTION ===== */
+        .products-section {
+            padding: 100px 0;
+            background: var(--blanco);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .product-card {
+            border-radius: var(--radius);
+            overflow: hidden;
+            background: white;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .product-image {
+            height: 260px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image.auto {
+            background: linear-gradient(135deg, #0F172A, #1E3A5F);
+        }
+
+        .product-image.electro {
+            background: linear-gradient(135deg, #0F172A, #1A3C34);
+        }
+
+        .product-image .product-img-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            font-size: 5rem;
+            color: rgba(255, 255, 255, 0.15);
+            position: relative;
+        }
+
+        .product-image .product-img-content i {
+            position: relative;
+            z-index: 2;
+        }
+
+        .product-image .product-img-content::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, var(--turquesa-glow), transparent);
+            border-radius: 50%;
+        }
+
+        .product-tag {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 6px 16px;
+            background: var(--gradient-turquesa);
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.75rem;
+            border-radius: 50px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .product-content {
+            padding: 36px;
+        }
+
+        .product-content h3 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--gris-oscuro);
+            margin-bottom: 12px;
+        }
+
+        .product-content .product-desc {
+            font-size: 0.95rem;
+            color: var(--gris-claro);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .product-features {
+            list-style: none;
+            margin-bottom: 28px;
+        }
+
+        .product-features li {
+            padding: 8px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 0.9rem;
+            color: var(--gris-medio);
+        }
+
+        .product-features li i {
+            color: var(--turquesa);
+            margin-top: 4px;
+            font-size: 0.8rem;
+        }
+
+        /* ===== HOW WE WORK SECTION ===== */
+        .process-section {
+            padding: 100px 0;
+            background: var(--gradient-hero);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .process-section .hero-grid {
+            opacity: 0.5;
+        }
+
+        .process-section .section-label {
+            color: var(--turquesa-light);
+        }
+
+        .process-section .section-title {
+            color: white;
+        }
+
+        .process-section .section-subtitle {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .process-timeline {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            top: 60px;
+            left: 12%;
+            width: 76%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--turquesa), var(--turquesa-light), var(--turquesa));
+            opacity: 0.3;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .process-step .step-number {
+            width: 72px;
+            height: 72px;
+            background: rgba(0, 180, 216, 0.1);
+            border: 2px solid rgba(0, 180, 216, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: var(--turquesa);
+            transition: var(--transition);
+            position: relative;
+            z-index: 3;
+        }
+
+        .process-step:hover .step-number {
+            background: var(--gradient-turquesa);
+            color: white;
+            border-color: var(--turquesa);
+            box-shadow: var(--shadow-turquesa);
+            transform: scale(1.1);
+        }
+
+        .process-step h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .process-step p {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+            line-height: 1.7;
+            max-width: 220px;
+            margin: 0 auto;
+        }
+
+        /* ===== TECHNOLOGY SECTION ===== */
+        .tech-section {
+            padding: 100px 0;
+            background: var(--blanco);
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .tech-content h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--gris-oscuro);
+            margin-bottom: 20px;
+        }
+
+        .tech-content p {
+            font-size: 1.05rem;
+            color: var(--gris-claro);
+            margin-bottom: 32px;
+            line-height: 1.8;
+        }
+
+        .tech-features {
+            list-style: none;
+            display: grid;
+            gap: 16px;
+        }
+
+        .tech-features li {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 20px;
+            background: var(--bg-section);
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+        }
+
+        .tech-features li:hover {
+            background: rgba(0, 180, 216, 0.06);
+            transform: translateX(6px);
+        }
+
+        .tech-features li .feat-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--gradient-turquesa);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .tech-features li span {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--gris-medio);
+        }
+
+        .tech-visual {
+            position: relative;
+        }
+
+        .tech-card-visual {
+            background: var(--gradient-hero);
+            border-radius: 24px;
+            padding: 48px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tech-card-visual::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--turquesa-glow), transparent);
+            border-radius: 50%;
+        }
+
+        .tech-card-visual .tech-icon-large {
+            font-size: 4rem;
+            color: var(--turquesa);
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .tech-card-visual h3 {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .tech-card-visual p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .tech-mini-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .tech-mini-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .tech-mini-card i {
+            font-size: 1.5rem;
+            color: var(--turquesa);
+            margin-bottom: 8px;
+        }
+
+        .tech-mini-card span {
+            display: block;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* ===== ALLIES SECTION ===== */
+        .allies-section {
+            padding: 100px 0;
+            background: var(--bg-section);
+        }
+
+        .allies-content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .allies-text h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--gris-oscuro);
+            margin-bottom: 20px;
+        }
+
+        .allies-text p {
+            font-size: 1.05rem;
+            color: var(--gris-claro);
+            line-height: 1.8;
+            margin-bottom: 32px;
+        }
+
+        .allies-reasons {
+            list-style: none;
+            display: grid;
+            gap: 12px;
+        }
+
+        .allies-reasons li {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--gris-medio);
+        }
+
+        .allies-reasons li i {
+            width: 32px;
+            height: 32px;
+            background: rgba(0, 180, 216, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--turquesa);
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        .allies-form-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 48px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .allies-form-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gris-oscuro);
+            margin-bottom: 8px;
+        }
+
+        .allies-form-card .form-subtitle {
+            font-size: 0.9rem;
+            color: var(--gris-claro);
+            margin-bottom: 28px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--gris-medio);
+            margin-bottom: 6px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid rgba(0, 0, 0, 0.06);
+            border-radius: var(--radius-sm);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: var(--gris-oscuro);
+            transition: var(--transition);
+            background: var(--blanco-off);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--turquesa);
+            box-shadow: 0 0 0 4px rgba(0, 180, 216, 0.1);
+            background: white;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .form-submit {
+            margin-top: 8px;
+        }
+
+        .form-submit .btn {
+            width: 100%;
+            padding: 16px;
+            font-size: 1rem;
+        }
+
+        /* ===== ABOUT SECTION ===== */
+        .about-section {
+            padding: 100px 0;
+            background: var(--blanco);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-visual {
+            position: relative;
+        }
+
+        .about-main-card {
+            background: var(--gradient-hero);
+            border-radius: 24px;
+            padding: 60px 48px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-main-card::before {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--turquesa-glow), transparent);
+            border-radius: 50%;
+        }
+
+        .about-main-card .about-icon {
+            font-size: 3rem;
+            color: var(--turquesa);
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-main-card h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-main-card p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1rem;
+            line-height: 1.8;
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-stats-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .about-stat-mini {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-stat-mini strong {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--turquesa);
+        }
+
+        .about-stat-mini span {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .about-text h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--gris-oscuro);
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            font-size: 1.05rem;
+            color: var(--gris-claro);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .about-text .about-highlights {
+            list-style: none;
+            display: grid;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .about-text .about-highlights li {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-weight: 500;
+            color: var(--gris-medio);
+        }
+
+        .about-text .about-highlights li i {
+            color: var(--turquesa);
+            font-size: 1rem;
+        }
+
+        /* ===== CTA FINAL SECTION ===== */
+        .cta-section {
+            padding: 100px 0;
+            background: var(--gradient-hero);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, var(--turquesa-glow), transparent);
+            border-radius: 50%;
+            opacity: 0.4;
+        }
+
+        .cta-section .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 20px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 550px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact-section {
+            padding: 100px 0;
+            background: var(--bg-section);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-info h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--gris-oscuro);
+            margin-bottom: 16px;
+        }
+
+        .contact-info p {
+            font-size: 1.05rem;
+            color: var(--gris-claro);
+            margin-bottom: 36px;
+            line-height: 1.8;
+        }
+
+        .contact-methods {
+            display: grid;
+            gap: 20px;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 24px;
+            background: white;
+            border-radius: var(--radius);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            transition: var(--transition);
+        }
+
+        .contact-method:hover {
+            transform: translateX(8px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(0, 180, 216, 0.2);
+        }
+
+        .contact-method .method-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(0, 180, 216, 0.08);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: var(--turquesa);
+            flex-shrink: 0;
+        }
+
+        .contact-method .method-text strong {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            color: var(--gris-oscuro);
+            margin-bottom: 4px;
+        }
+
+        .contact-method .method-text span {
+            font-size: 0.9rem;
+            color: var(--gris-claro);
+        }
+
+        .contact-form-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 48px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .contact-form-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--gris-oscuro);
+            margin-bottom: 24px;
+        }
+
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid rgba(0, 0, 0, 0.06);
+            border-radius: var(--radius-sm);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: var(--gris-oscuro);
+            transition: var(--transition);
+            background: var(--blanco-off);
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--turquesa);
+            box-shadow: 0 0 0 4px rgba(0, 180, 216, 0.1);
+            background: white;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--gris-oscuro);
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand .logo {
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand .logo span {
+            color: var(--turquesa);
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--turquesa);
+            padding-left: 6px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.85rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.4);
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background: var(--turquesa);
+            border-color: var(--turquesa);
+            color: white;
+        }
+
+        /* ===== WHATSAPP FLOATING ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 64px;
+            height: 64px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 40px rgba(37, 211, 102, 0.5);
+        }
+
+        .whatsapp-float::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: #25D366;
+            animation: pulse 2s infinite;
+            z-index: -1;
+        }
+
+        /* ===== MOBILE NAV OVERLAY ===== */
+        .mobile-nav-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+        }
+
+        .mobile-nav-overlay.active {
+            display: block;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero-visual {
+                display: none;
+            }
+
+            .trust-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-timeline {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+
+            .process-timeline::before {
+                display: none;
+            }
+
+            .tech-grid,
+            .allies-content-grid,
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 300px;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                padding: 100px 30px 30px;
+                box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+                gap: 4px;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-menu a {
+                padding: 14px 18px;
+                font-size: 1rem;
+                width: 100%;
+            }
+
+            .nav-cta {
+                margin-left: 0;
+                margin-top: 16px;
+                width: 100%;
+            }
+
+            .nav-cta .btn {
+                width: 100%;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 140px 0 80px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .trust-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-card {
+                padding: 36px 24px;
+            }
+
+            .trust-card .trust-number {
+                font-size: 2.5rem;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-timeline {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+
+            .allies-form-card {
+                padding: 32px 24px;
+            }
+
+            .contact-form-card {
+                padding: 32px 24px;
+            }
+
+            .about-main-card {
+                padding: 40px 28px;
+            }
+
+            .about-stats-row {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .tech-mini-cards {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 1.7rem;
+            }
+
+            .about-stats-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== SCROLL TO TOP ===== */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 110px;
+            width: 48px;
+            height: 48px;
+            background: var(--gradient-turquesa);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.1rem;
+            cursor: pointer;
+            z-index: 997;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            box-shadow: var(--shadow-turquesa);
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-4px);
+        }
+
+        /* ===== PAGE TRANSITIONS ===== */
+        section {
+            position: relative;
+        }
+
+        /* ===== CLIENTS SECTION (B2C) ===== */
+        .clients-section {
+            padding: 100px 0;
+            background: var(--blanco);
+        }
+
+        .clients-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .client-card {
+            background: var(--gradient-card);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            border-radius: var(--radius);
+            padding: 40px 32px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .client-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .client-card .client-icon {
+            width: 72px;
+            height: 72px;
+            background: rgba(0, 180, 216, 0.08);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 1.8rem;
+            color: var(--turquesa);
+            transition: var(--transition);
+        }
+
+        .client-card:hover .client-icon {
+            background: var(--gradient-turquesa);
+            color: white;
+        }
+
+        .client-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--gris-oscuro);
+            margin-bottom: 12px;
+        }
+
+        .client-card p {
+            font-size: 0.9rem;
+            color: var(--gris-claro);
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .clients-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header" id="header">
+        <div class="container">
+            <a href="#" class="logo">
+                <div class="logo-icon">SAM</div>
+                <div>
+                    SAM <span>Latinoamérica</span>
+                    <small>Garantías Extendidas</small>
+                </div>
+            </a>
+
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#inicio" class="active">Inicio</a></li>
+                    <li><a href="#aliados">Aliados</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#tecnologia">Tecnología</a></li>
+                    <li><a href="#nosotros">Quiénes Somos</a></li>
+                    <li><a href="#clientes">Clientes</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li class="nav-cta">
+                        <a href="#aliados" class="btn btn-primary">Conviértete en Aliado</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+    <div class="mobile-nav-overlay" id="mobileOverlay"></div>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="inicio">
+        <div class="hero-grid"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    Más de 40 años de respaldo
+                </div>
+                <h1>
+                    Garantías Extendidas que <span class="highlight">fortalecen tu negocio</span>
+                </h1>
+                <p class="hero-subtitle">
+                    En SAM Latinoamérica desarrollamos y gestionamos programas de Garantías Extendidas y Asistencias que ayudan a aseguradoras, bancos y comercios a aumentar ingresos, fidelizar clientes y diferenciar su oferta, con respaldo financiero y operación integral.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#aliados" class="btn btn-primary">
+                        <i class="fas fa-handshake"></i> Conviértete en Aliado
+                    </a>
+                    <a href="https://wa.me/18093337555" target="_blank" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Hablar por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-card-main">
+                    <div class="card-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Programas a la medida</h3>
+                    <p>Diseñamos soluciones de garantía extendida adaptadas a tu modelo de negocio y tus clientes.</p>
+
+                    <div class="hero-floating-card card-1">
+                        <div class="mini-stat">
+                            <div class="stat-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="stat-text">
+                                <strong>4,600+</strong>
+                                <span>Reclamaciones gestionadas</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-floating-card card-2">
+                        <div class="mini-stat">
+                            <div class="stat-icon">
+                                <i class="fas fa-globe-americas"></i>
+                            </div>
+                            <div class="stat-text">
+                                <strong>Regional</strong>
+                                <span>Presencia en Latinoamérica</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TRUST / METRICS SECTION ===== -->
+    <section class="trust-section" id="respaldo">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-label">
+                    Respaldo y Confianza
+                </div>
+                <h2 class="section-title">Solidez que respalda cada garantía</h2>
+                <p class="section-subtitle">
+                    Más de 40 años de trayectoria empresarial nos respaldan como un aliado sólido y confiable en el desarrollo y gestión de Garantías Extendidas en Latinoamérica.
+                </p>
+            </div>
+
+            <div class="trust-grid">
+                <div class="trust-card animate-on-scroll">
+                    <div class="trust-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <div class="trust-number">40<span class="plus">+</span></div>
+                    <div class="trust-label">Años de Trayectoria</div>
+                    <div class="trust-desc">Grupo empresarial con décadas de experiencia en el mercado</div>
+                </div>
+
+                <div class="trust-card animate-on-scroll">
+                    <div class="trust-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="trust-number">4,600<span class="plus">+</span></div>
+                    <div class="trust-label">Reclamaciones Gestionadas</div>
+                    <div class="trust-desc">Exitosamente procesadas desde 2017 con eficiencia y transparencia</div>
+                </div>
+
+                <div class="trust-card animate-on-scroll">
+                    <div class="trust-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <div class="trust-number">LATAM</div>
+                    <div class="trust-label">Presencia Regional</div>
+                    <div class="trust-desc">Respaldados por fondos de inversión internacionales y red de talleres nacional</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BENEFITS SECTION ===== -->
+    <section class="benefits-section" id="beneficios">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-label">
+                    Beneficios para Aliados
+                </div>
+                <h2 class="section-title">Ventajas de trabajar con SAM</h2>
+                <p class="section-subtitle">
+                    Potencia tu negocio con soluciones que generan valor sin complejidad operativa.
+                </p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card animate-on-scroll">
+                    <div class="benefit-number">01</div>
+                    <div class="benefit-icon">
+                        <i class="fas fa-arrow-trend-up"></i>
+                    </div>
+                    <h3>Aumenta tus ingresos</h3>
+                    <p>Incorpora nuevas fuentes de rentabilidad sin asumir riesgos operativos ni financieros adicionales.</p>
+                </div>
+
+                <div class="benefit-card animate-on-scroll">
+                    <div class="benefit-number">02</div>
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Fideliza tu cartera</h3>
+                    <p>Ofrece un valor agregado que mejora la experiencia y permanencia de tus clientes.</p>
+                </div>
+
+                <div class="benefit-card animate-on-scroll">
+                    <div class="benefit-number">03</div>
+                    <div class="benefit-icon">
+                        <i class="fas fa-gears"></i>
+                    </div>
+                    <h3>Cero carga operativa</h3>
+                    <p>SAM administra la gestión completa de las reclamaciones y pagos.</p>
+                </div>
+
+                <div class="benefit-card animate-on-scroll">
+                    <div class="benefit-number">04</div>
+                    <div class="benefit-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Respaldo tecnológico</h3>
+                    <p>Plataforma moderna, segura y escalable para una gestión eficiente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRODUCTS SECTION ===== -->
+    <section class="products-section" id="productos">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-label">
+                    Nuestros Productos
+                </div>
+                <h2 class="section-title">Soluciones diseñadas para crecer</h2>
+                <p class="section-subtitle">
+                    Programas de garantía extendida adaptados a distintos canales y necesidades del mercado.
+                </p>
+            </div>
+
+            <div class="products-grid">
+                <div class="product-card animate-on-scroll">
+                    <div class="product-image auto">
+                        <div class="product-img-content">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <div class="product-tag">Automotriz</div>
+                    </div>
+                    <div class="product-content">
+                        <h3>Garantía Mecánica Extendida</h3>
+                        <p class="product-desc">
+                            Programa complementario de pólizas de vehículos o financiamientos automotrices, comercializado a través de aseguradoras, bancos, dealers y concesionarios.
+                        </p>
+                        <ul class="product-features">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                Cobertura de averías mecánicas de motor y transmisión
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                Deducible variable según antigüedad y kilometraje
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                Cobertura anual de hasta USD \$30,000
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                Red de talleres autorizados a nivel nacional
+                            </li>
+                        </ul>
+                        <a href="#aliados" class="btn btn-secondary">
+                            <i class="fas fa-arrow-right"></i> Más información
+                        </a>
+                    </div>
+                </div>
+
+                <div class="product-card animate-on-scroll">
+                    <div class="product-image electro">
+                        <div class="product-img-content">
+                            <i class="fas fa-tv"></i>
+                        </div>
+                        <div class="product-tag">Electrodomésticos</div>
+                    </div>
+                    <div class="product-content">
+                        <h3>Garantía Extendida para Electrodomésticos</h3>
+                        <p class="product-desc">
+                            Solución complementaria para pólizas de hogar, créditos hipotecarios y comercios retail. Valor agregado ideal para fidelización.
+                        </p>
+                        <ul class="product-features">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                Cubre averías por mal funcionamiento
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                Sin deducible para el cliente final
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                Cobertura anual de hasta RD \$50,000
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                Gestión de reclamos rápida y transparente
+                            </li>
+                        </ul>
+                        <a href="#aliados" class="btn btn-secondary">
+                            <i class="fas fa-arrow-right"></i> Más información
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROCESS SECTION ===== -->
+    <section class="process-section" id="proceso">
+        <div class="hero-grid"></div>
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-label">
+                    Cómo Trabajamos Contigo
+                </div>
+                <h2 class="section-title">Integración simple, resultados reales</h2>
+                <p class="section-subtitle">
+                    Un proceso diseñado para que tu equipo comercialice con confianza y sin fricción.
+                </p>
+            </div>
+
+            <div class="process-timeline">
+                <div class="process-step animate-on-scroll">
+                    <div class="step-number">1</div>
+                    <h3>Diseñamos</h3>
+                    <p>Creamos el programa de garantía a la medida de tu negocio y tus clientes.</p>
+                </div>
+
+                <div class="process-step animate-on-scroll">
+                    <div class="step-number">2</div>
+                    <h3>Integramos</h3>
+                    <p>Conectamos nuestros procesos y sistemas de forma sencilla con tu operación.</p>
+                </div>
+
+                <div class="process-step animate-on-scroll">
+                    <div class="step-number">3</div>
+                    <h3>Comercializas</h3>
+                    <p>Tu equipo vende el producto con el respaldo y la marca SAM.</p>
+                </div>
+
+                <div class="process-step animate-on-scroll">
+                    <div class="step-number">4</div>
+                    <h3>Gestionamos</h3>
+                    <p>Nosotros administramos las reclamaciones, pagos y soporte al cliente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TECHNOLOGY SECTION ===== -->
+    <section class="tech-section" id="tecnologia">
+        <div class="container">
+            <div class="tech-grid">
+                <div class="tech-content animate-on-scroll">
+                    <div class="section-label" style="justify-content: flex-start;">
+                        Tecnología y Seguridad
+                    </div>
+                    <h2>Infraestructura que garantiza eficiencia</h2>
+                    <p>
+                        Contamos con un sistema moderno de gestión de seguros, servidores de alta seguridad y procesos automatizados que garantizan trazabilidad, eficiencia operativa y protección de datos.
+                    </p>
+                    <ul class="tech-features">
+                        <li>
+                            <div class="feat-icon"><i class="fas fa-cloud-arrow-up"></i></div>
+                            <span>Sistema de gestión de seguros en la nube</span>
+                        </li>
+                        <li>
+                            <div class="feat-icon"><i class="fas fa-lock"></i></div>
+                            <span>Servidores de alta seguridad y encriptación</span>
+                        </li>
+                        <li>
+                            <div class="feat-icon"><i class="fas fa-robot"></i></div>
+                            <span>Procesos automatizados de reclamaciones</span>
+                        </li>
+                        <li>
+                            <div class="feat-icon"><i class="fas fa-chart-bar"></i></div>
+                            <span>Reportería y trazabilidad en tiempo real</span>
+                        </li>
+                        <li>
+                            <div class="feat-icon"><i class="fas fa-shield-halved"></i></div>
+                            <span>Protección integral de datos sensibles</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="tech-visual animate-on-scroll">
+                    <div class="tech-card-visual">
+                        <div class="tech-icon-large">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <h3>Plataforma SAM</h3>
+                        <p>Tecnología propia diseñada para la gestión integral de programas de garantía extendida.</p>
+                        <div class="tech-mini-cards">
+                            <div class="tech-mini-card">
+                                <i class="fas fa-bolt"></i>
+                                <span>Alta Velocidad</span>
+                            </div>
+                            <div class="tech-mini-card">
+                                <i class="fas fa-expand"></i>
+                                <span>Escalable</span>
+                            </div>
+                            <div class="tech-mini-card">
+                                <i class="fas fa-fingerprint"></i>
+                                <span>Segura</span>
+                            </div>
+                            <div class="tech-mini-card">
+                                <i class="fas fa-plug"></i>
+                                <span>Integrable</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT SECTION ===== -->
+    <section class="about-section" id="nosotros">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-visual animate-on-scroll">
+                    <div class="about-main-card">
+                        <div class="about-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3>SAM Latinoamérica</h3>
+                        <p>
+                            Compañía dedicada al desarrollo, comercialización y gestión de Garantías Extendidas y Asistencias en los sectores asegurador, bancario, automotriz y tecnológico.
+                        </p>
+                        <div class="about-stats-row">
+                            <div class="about-stat-mini">
+                                <strong>40+</strong>
+                                <span>Años de experiencia</span>
+                            </div>
+                            <div class="about-stat-mini">
+                                <strong>4,600+</strong>
+                                <span>Reclamaciones exitosas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-text animate-on-scroll">
+                    <div class="section-label" style="justify-content: flex-start;">
+                        Quiénes Somos
+                    </div>
+                    <h2>Un aliado estratégico regional</h2>
+                    <p>
+                        SAM Latinoamérica es una compañía dedicada al desarrollo, comercialización y gestión de Garantías Extendidas y Asistencias.
+                    </p>
+                    <p>
+                        Pertenecemos a un grupo empresarial con más de 40 años de trayectoria en el mercado y contamos con el respaldo de fondos de inversión internacionales, lo que nos permite ofrecer soluciones sólidas, confiables y de alta calidad.
+                    </p>
+                    <ul class="about-highlights">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Experiencia regional comprobada
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Respaldo financiero sólido
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Operación integral end-to-end
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Procesos simples para tu equipo
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Sectores: asegurador, bancario, automotriz y tecnológico
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ALLIES / FORM SECTION ===== -->
+    <section class="allies-section" id="aliados">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-label">
+                    Aliados Estratégicos
+                </div>
+                <h2 class="section-title">Conviértete en Aliado SAM</h2>
+                <p class="section-subtitle">
+                    Integra Garantías Extendidas a tu portafolio con el respaldo financiero, tecnológico y operativo de un socio estratégico regional.
+                </p>
+            </div>
+
+            <div class="allies-content-grid">
+                <div class="allies-text animate-on-scroll">
+                    <h2>Trabajamos como una extensión de tu negocio</h2>
+                    <p>
+                        En SAM Latinoamérica diseñamos, implementamos y administramos programas de Garantías Extendidas que fortalecen tu propuesta de valor, aumentan la fidelización de tus clientes y generan ingresos recurrentes sin fricción operativa.
+                    </p>
+
+                    <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--gris-oscuro); margin-bottom: 16px;">¿Por qué SAM?</h3>
+                    <ul class="allies-reasons">
+                        <li>
+                            <i class="fas fa-check"></i>
+                            Experiencia regional comprobada
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            Respaldo financiero sólido
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            Operación integral end-to-end
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            Procesos simples para tu equipo
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            Nuevas fuentes de ingreso recurrente
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            Diferenciación frente a la competencia
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            Mejora en la experiencia del cliente final
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            Cero carga operativa
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="allies-form-card animate-on-scroll">
+                    <h3>Solicita una propuesta personalizada</h3>
+                    <p class="form-subtitle">Completa el formulario y nuestro equipo te contactará a la brevedad.</p>
+
+                    <form id="allyForm" onsubmit="handleFormSubmit(event, 'ally')">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="ally-name">Nombre completo</label>
+                                <input type="text" id="ally-name" name="nombre" placeholder="Tu nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="ally-company">Empresa</label>
+                                <input type="text" id="ally-company" name="empresa" placeholder="Nombre de tu empresa" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="ally-position">Cargo</label>
+                                <input type="text" id="ally-position" name="cargo" placeholder="Tu cargo">
+                            </div>
+                            <div class="form-group">
+                                <label for="ally-email">Email corporativo</label>
+                                <input type="email" id="ally-email" name="email" placeholder="correo@empresa.com" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="ally-country">País</label>
+                                <select id="ally-country" name="pais" required>
+                                    <option value="">Selecciona tu país</option>
+                                    <option value="republica-dominicana">República Dominicana</option>
+                                    <option value="mexico">México</option>
+                                    <option value="colombia">Colombia</option>
+                                    <option value="panama">Panamá</option>
+                                    <option value="costa-rica">Costa Rica</option>
+                                    <option value="guatemala">Guatemala</option>
+                                    <option value="ecuador">Ecuador</option>
+                                    <option value="peru">Perú</option>
+                                    <option value="chile">Chile</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="ally-type">Tipo de empresa</label>
+                                <select id="ally-type" name="tipo" required>
+                                    <option value="">Selecciona el tipo</option>
+                                    <option value="aseguradora">Aseguradora</option>
+                                    <option value="banco">Banco / Financiera</option>
+                                    <option value="dealer">Dealer / Concesionario</option>
+                                    <option value="retail">Comercio / Retail</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-submit">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i> Solicitar propuesta personalizada
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CLIENTS B2C SECTION ===== -->
+    <section class="clients-section" id="clientes">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-label">
+                    Para Clientes
+                </div>
+                <h2 class="section-title">¿Ya tienes una Garantía SAM?</h2>
+                <p class="section-subtitle">
+                    Información útil para afiliados: coberturas, uso de la garantía, red de talleres y contacto de soporte.
+                </p>
+            </div>
+
+            <div class="clients-cards">
+                <div class="client-card animate-on-scroll">
+                    <div class="client-icon">
+                        <i class="fas fa-file-shield"></i>
+                    </div>
+                    <h3>Tus Coberturas</h3>
+                    <p>Consulta los detalles de tu póliza de Garantía Extendida, qué cubre y cómo aprovecharla al máximo.</p>
+                </div>
+
+                <div class="client-card animate-on-scroll">
+                    <div class="client-icon">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <h3>Red de Talleres</h3>
+                    <p>Encuentra talleres autorizados y centros de servicio en tu zona para atender tu reclamación de forma rápida.</p>
+                </div>
+
+                <div class="client-card animate-on-scroll">
+                    <div class="client-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Soporte y Reclamos</h3>
+                    <p>Comunícate con nuestro equipo de atención al cliente para reportar una avería o consultar el estado de tu caso.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 48px;" class="animate-on-scroll">
+                <a href="https://wa.me/18093337555" target="_blank" class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Contactar Soporte
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA FINAL SECTION ===== -->
+    <section class="cta-section">
+        <div class="container animate-on-scroll">
+            <h2>Conviértete en el aliado que tus clientes necesitan</h2>
+            <p>
+                Habla hoy con nuestro equipo y descubre cómo integrar Garantías Extendidas a tu portafolio con el respaldo de SAM Latinoamérica.
+            </p>
+            <div class="cta-buttons">
+                <a href="#aliados" class="btn btn-primary" style="font-size: 1.05rem; padding: 16px 36px;">
+                    <i class="fas fa-handshake"></i> Conviértete en Aliado
+                </a>
+                <a href="https://wa.me/18093337555" target="_blank" class="btn btn-whatsapp" style="font-size: 1.05rem; padding: 16px 36px;">
+                    <i class="fab fa-whatsapp"></i> Hablar por WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section class="contact-section" id="contacto">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-label">
+                    Contacto
+                </div>
+                <h2 class="section-title">Estamos listos para ayudarte</h2>
+                <p class="section-subtitle">
+                    Nuestro equipo está listo para ayudarte a integrar Garantías Extendidas a tu portafolio de productos.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info animate-on-scroll">
+                    <h2>¿Te interesa convertirte en aliado?</h2>
+                    <p>
+                        Contáctanos directamente por cualquiera de nuestros canales y recibe atención personalizada.
+                    </p>
+
+                    <div class="contact-methods">
+                        <a href="https://wa.me/18093337555" target="_blank" class="contact-method">
+                            <div class="method-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="method-text">
+                                <strong>WhatsApp</strong>
+                                <span>+1 809 333 7555</span>
+                            </div>
+                        </a>
+
+                        <a href="mailto:info@samlatinoamerica.com" class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="method-text">
+                                <strong>Email</strong>
+                                <span>info@samlatinoamerica.com</span>
+                            </div>
+                        </a>
+
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="method-text">
+                                <strong>Oficina Regional</strong>
+                                <span>Latinoamérica</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-card animate-on-scroll">
+                    <h3>Envíanos un mensaje</h3>
+                    <form id="contactForm" onsubmit="handleFormSubmit(event, 'contact')">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contact-name">Nombre</label>
+                                <input type="text" id="contact-name" name="nombre" placeholder="Tu nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email">Email</label>
+                                <input type="email" id="contact-email" name="email" placeholder="correo@ejemplo.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-company">Empresa</label>
+                            <input type="text" id="contact-company" name="empresa" placeholder="Nombre de tu empresa">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Mensaje</label>
+                            <textarea id="contact-message" name="mensaje" placeholder="¿En qué podemos ayudarte?" required></textarea>
+                        </div>
+                        <div class="form-submit">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i> Enviar mensaje
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <div class="logo-icon">SAM</div>
+                        <div>
+                            SAM <span>Latinoamérica</span>
+                            <small>Garantías Extendidas</small>
+                        </div>
+                    </a>
+                    <p style="margin-top: 16px;">
+                        Desarrollo, comercialización y gestión de Garantías Extendidas y Asistencias para aseguradoras, bancos, dealers y comercios en toda Latinoamérica.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Navegación</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#aliados">Aliados</a></li>
+                        <li><a href="#productos">Productos</a></li>
+                        <li><a href="#tecnologia">Tecnología</a></li>
+                        <li><a href="#nosotros">Quiénes Somos</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Productos</h4>
+                    <ul>
+                        <li><a href="#productos">Garantía Mecánica</a></li>
+                        <li><a href="#productos">Garantía Electrodomésticos</a></li>
+                        <li><a href="#clientes">Zona Clientes</a></li>
+                        <li><a href="#aliados">Ser Aliado</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><a href="https://wa.me/18093337555" target="_blank"><i class="fab fa-whatsapp" style="margin-right: 6px;"></i> +1 809 333 7555</a></li>
+                        <li><a href="mailto:info@samlatinoamerica.com"><i class="fas fa-envelope" style="margin-right: 6px;"></i> info@samlatinoamerica.com</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 SAM Latinoamérica. Todos los derechos reservados.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/18093337555" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== WHATSAPP FLOATING BUTTON ===== -->
+    <a href="https://wa.me/18093337555" target="_blank" class="whatsapp-float" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ===== SCROLL TO TOP ===== -->
+    <div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // ===== HEADER SCROLL EFFECT =====
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // ===== MOBILE MENU =====
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            mobileOverlay.classList.toggle('active');
+            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        mobileOverlay.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            mobileOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // Close menu on nav link click
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                mobileOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // ===== ACTIVE NAV LINK ON SCROLL =====
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 120;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // ===== SCROLL TO TOP BUTTON =====
+        const scrollTopBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        // ===== ANIMATE ON SCROLL (Intersection Observer) =====
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ===== COUNTER ANIMATION =====
+        function animateCounters() {
+            const counters = document.querySelectorAll('.trust-number');
+            counters.forEach(counter => {
+                const text = counter.textContent;
+                // Only animate numeric values
+                const numMatch = text.match(/[\d,]+/);
+                if (numMatch) {
+                    const target = parseInt(numMatch[0].replace(/,/g, ''));
+                    const suffix = text.replace(numMatch[0], '');
+                    const duration = 2000;
+                    const start = performance.now();
+
+                    function update(currentTime) {
+                        const elapsed = currentTime - start;
+                        const progress = Math.min(elapsed / duration, 1);
+                        // Ease out cubic
+                        const eased = 1 - Math.pow(1 - progress, 3);
+                        const current = Math.floor(eased * target);
+                        const formatted = current.toLocaleString();
+
+                        // Reconstruct with plus sign and suffix
+                        counter.innerHTML = formatted + suffix;
+
+                        if (progress < 1) {
+                            requestAnimationFrame(update);
+                        }
+                    }
+                    requestAnimationFrame(update);
+                }
+            });
+        }
+
+        // Trigger counter animation when trust section is in view
+        const trustSection = document.querySelector('.trust-section');
+        let counterAnimated = false;
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !counterAnimated) {
+                    counterAnimated = true;
+                    animateCounters();
+                }
+            });
+        }, { threshold: 0.3 });
+
+        if (trustSection) {
+            counterObserver.observe(trustSection);
+        }
+
+        // ===== SMOOTH SCROLL FOR ALL ANCHOR LINKS =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // ===== FORM HANDLING =====
+        function handleFormSubmit(event, formType) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+
+            // Build WhatsApp message
+            let message = '';
+            if (formType === 'ally') {
+                message = `¡Hola! Me interesa convertirme en aliado SAM.\n\n`;
+                message += `*Nombre:* ${data.nombre}\n`;
+                message += `*Empresa:* ${data.empresa}\n`;
+                message += `*Cargo:* ${data.cargo || 'No especificado'}\n`;
+                message += `*Email:* ${data.email}\n`;
+                message += `*País:* ${data.pais}\n`;
+                message += `*Tipo de empresa:* ${data.tipo}\n\n`;
+                message += `Solicito una propuesta personalizada.`;
+            } else {
+                message = `¡Hola! Quisiera información sobre SAM Latinoamérica.\n\n`;
+                message += `*Nombre:* ${data.nombre}\n`;
+                message += `*Email:* ${data.email}\n`;
+                message += `*Empresa:* ${data.empresa || 'No especificado'}\n`;
+                message += `*Mensaje:* ${data.mensaje}\n`;
+            }
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappURL = `https://wa.me/18093337555?text=${encodedMessage}`;
+
+            // Show success feedback
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-check"></i> ¡Enviando a WhatsApp...';
+            submitBtn.style.background = '#25D366';
+
+            setTimeout(() => {
+                window.open(whatsappURL, '_blank');
+                submitBtn.innerHTML = originalText;
+                submitBtn.style.background = '';
+                form.reset();
+            }, 1000);
+        }
+
+        // ===== PARALLAX EFFECT FOR HERO =====
+        window.addEventListener('scroll', () => {
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                const scrolled = window.scrollY;
+                const heroContent = hero.querySelector('.hero-content');
+                if (heroContent && scrolled < window.innerHeight) {
+                    heroContent.style.transform = `translateY(${scrolled * 0.15}px)`;
+                    heroContent.style.opacity = 1 - (scrolled / (window.innerHeight * 0.8));
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
