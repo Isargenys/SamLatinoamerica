@@ -136,7 +136,7 @@
         .hero-card{background:rgba(255,255,255,.05);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:36px}
         .hero-card .ic-box{width:64px;height:64px;background:var(--grad1);border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:#fff;box-shadow:var(--shadow1)}
         .fc{position:absolute;background:rgba(255,255,255,.1);backdrop-filter:blur(15px);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:16px 20px;animation:float 4s ease-in-out infinite}
-        .fc1{top:-24px;right:-16px}.fc2{bottom:-16px;left:-24px;animation-delay:2s}
+        .fc1{top:-24px;right:-16px}.fc2{bottom:-69px;left:-24px;animation-delay:2s}
         .sm-icon{width:40px;height:40px;background:var(--grad1);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0}
 
         /* ===== SECTION HELPERS ===== */
@@ -228,7 +228,7 @@
         .ft a:hover{color:var(--c4)}
         .si{width:38px;height:38px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;display:inline-flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);transition:var(--ease)}
         .si:hover{background:var(--c1);border-color:var(--c1);color:#fff}
-
+        .custom-image-footer { height: auto; width: 200px; }
         /* ===== WA FLOAT ===== */
         .waf{position:fixed;bottom:28px;right:28px;width:62px;height:62px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.7rem;box-shadow:0 8px 28px rgba(37,211,102,.4);z-index:1050;transition:var(--ease)}
         .waf:hover{transform:scale(1.1);color:#fff}
@@ -256,7 +256,7 @@
         <!-- LOGO -->
       <!-- LOGO -->
 <a class="navbar-brand" href="#inicio" aria-label="SAM Latinoamérica - Inicio">
-    <img src="/img/LogoHorizontal.png" 
+    <img src="./img/LogoHorizontal2.png" 
          alt="SAM Latinoamérica - Garantías Extendidas" 
          height="65" 
          width="auto" 
@@ -719,13 +719,9 @@
         <div class="container">
             <div class="row gy-4 mb-4">
                 <div class="col-lg-4">
-                    <!-- <a href="#inicio" class="d-flex align-items-center gap-2 text-decoration-none mb-3" aria-label="SAM Latinoamérica">
-                        <div class="logo-box" aria-hidden="true">SAM</div>
-                        <div>
-                            <span class="fw-bold text-white fh">SAM <span style="color:var(--c1)">Latinoamérica</span></span>
-                            <small class="d-block" style="font-size:.55rem;color:rgba(255,255,255,.4);letter-spacing:2px;text-transform:uppercase">Garantías Extendidas</small>
-                        </div>
-                    </a> -->
+                    <a href="#inicio" class="d-flex align-items-center gap-2 text-decoration-none mb-3" aria-label="SAM Latinoamérica">
+                        <img src="./img/logofooter.png" class="img-fluid custom-image-footer"  alt="logo en el footer de SAM Latinoamérica">
+                    </a>
                     <p class="small" style="color:rgba(255,255,255,.5);max-width:280px;line-height:1.7">
                         Desarrollo, comercialización y gestión de Garantías Extendidas y Asistencias para aseguradoras, bancos, dealers y comercios en Latinoamérica.
                     </p>
@@ -893,7 +889,8 @@
                 btn.style.background = '#25D366';
                 btn.disabled = true;
                 setTimeout(function(){
-                    window.open('https://wa.me/18093337555?text='+encodeURIComponent(msg),'_blank');
+                    // window.open('https://wa.me/18093337555?text='+encodeURIComponent(msg),'_blank');
+                    window.open('https://wa.me/18494528882?text='+encodeURIComponent(msg),'_blank');
                     btn.innerHTML = orig;
                     btn.style.background = '';
                     btn.disabled = false;
