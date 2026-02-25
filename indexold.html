@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAM Latinoamérica | Garantías Extendidas para Aseguradoras, Bancos y Comercios</title>
+    <meta name="description" content="SAM Latinoamérica desarrolla y gestiona programas de Garantías Extendidas y Asistencias para aseguradoras, bancos, dealers y comercios. Más de 40 años de respaldo.">
+    <meta name="keywords" content="garantías extendidas, garantía mecánica, garantía electrodomésticos, aseguradoras, bancos, SAM Latinoamérica">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#00B4D8">
+    <link rel="canonical" href="https://www.samlatinoamerica.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="SAM Latinoamérica | Garantías Extendidas que fortalecen tu negocio">
+    <meta property="og:description" content="Programas de Garantías Extendidas para aseguradoras, bancos y comercios. +40 años de trayectoria.">
+    <meta property="og:url" content="https://www.samlatinoamerica.com/">
+    <meta property="og:image" content="https://www.samlatinoamerica.com/assets/og-image.jpg">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@type":"Organization",
+        "name":"SAM Latinoamérica",
+        "url":"https://www.samlatinoamerica.com",
+        "description":"Garantías Extendidas y Asistencias para aseguradoras, bancos, dealers y comercios en Latinoamérica.",
+        "contactPoint":{"@type":"ContactPoint","telephone":"+1-809-333-7555","contactType":"sales"}
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@type":"FAQPage",
+        "mainEntity":[
+            {"@type":"Question","name":"¿Qué es una Garantía Extendida de SAM?","acceptedAnswer":{"@type":"Answer","text":"Es un programa complementario que extiende la protección original de vehículos o electrodomésticos."}},
+            {"@type":"Question","name":"¿Quiénes pueden ser aliados?","acceptedAnswer":{"@type":"Answer","text":"Aseguradoras, bancos, dealers automotrices, concesionarios y comercios retail."}},
+            {"@type":"Question","name":"¿Cómo me convierto en aliado?","acceptedAnswer":{"@type":"Answer","text":"Contacta por WhatsApp al +1 809 333 7555 o completa el formulario web."}}
+        ]
+    }
+    </script>
+
+    <style>
+        /* ========== VARIABLES ========== */
+        :root {
+            --sam: #00B4D8;
+            --sam-dark: #0096B7;
+            --sam-light: #90E0EF;
+            --sam-glow: rgba(0,180,216,0.3);
+            --dark: #1A1A2E;
+            --dark-mid: #2D2D44;
+            --gray: #6B7280;
+            --bg-light: #F1F5F9;
+            --hero-bg: linear-gradient(135deg,#0F172A 0%,#1A1A2E 40%,#162032 100%);
+            --sam-gradient: linear-gradient(135deg,#00B4D8,#0096B7);
+            --shadow-sam: 0 8px 30px rgba(0,180,216,0.25);
+            --ease: all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+        }
+
+        /* ========== BASE ========== */
+        body { font-family:'Inter',sans-serif; color:var(--dark); overflow-x:hidden; }
+        h1,h2,h3,h4,h5,h6 { font-family:'Montserrat',sans-serif; }
+        a { transition:var(--ease); }
+        .font-heading { font-family:'Montserrat',sans-serif; }
+
+        /* ========== SKIP LINK ========== */
+        .skip-link {
+            position:absolute; top:-100%; left:0; background:var(--sam);
+            color:#fff; padding:12px 24px; z-index:10000; font-weight:600;
+        }
+        .skip-link:focus { top:0; color:#fff; }
+
+        /* ========== ANIMATIONS ========== */
+        @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+        @keyframes pulse { 0%,100%{transform:scale(1);opacity:.5} 50%{transform:scale(1.1);opacity:.8} }
+        .anim { opacity:0; transform:translateY(30px); transition:opacity .8s ease,transform .8s ease; }
+        .anim.show { opacity:1; transform:translateY(0); }
+
+        /* ========== NAVBAR ========== */
+        .navbar-sam {
+            background:rgba(255,255,255,.96)!important;
+            backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+            border-bottom:1px solid rgba(0,0,0,.05);
+            transition:var(--ease);
+        }
+        .navbar-sam.scrolled { box-shadow:0 4px 30px rgba(0,0,0,.08); }
+        .logo-box {
+            width:42px; height:42px; background:var(--sam-gradient);
+            border-radius:10px; display:inline-flex; align-items:center;
+            justify-content:center; color:#fff; font-weight:900; font-size:1rem;
+        }
+        .navbar-sam .nav-link {
+            font-size:.9rem; font-weight:500; color:var(--dark-mid)!important;
+            border-radius:8px; padding:.5rem 1rem!important; transition:var(--ease);
+        }
+        .navbar-sam .nav-link:hover,
+        .navbar-sam .nav-link.active { color:var(--sam)!important; background:rgba(0,180,216,.06); }
+        .navbar-toggler { border:none; }
+        .navbar-toggler:focus { box-shadow:none; }
+
+        /* ========== BUTTONS ========== */
+        .btn-sam {
+            background:var(--sam-gradient); color:#fff; border:none;
+            border-radius:50px; font-family:'Montserrat',sans-serif;
+            font-weight:600; padding:12px 28px; box-shadow:var(--shadow-sam);
+            transition:var(--ease);
+        }
+        .btn-sam:hover { color:#fff; transform:translateY(-2px); box-shadow:0 12px 40px rgba(0,180,216,.35); }
+        .btn-sam-out {
+            background:transparent; color:var(--sam); border:2px solid var(--sam);
+            border-radius:50px; font-family:'Montserrat',sans-serif;
+            font-weight:600; padding:10px 26px; transition:var(--ease);
+        }
+        .btn-sam-out:hover { background:var(--sam); color:#fff; transform:translateY(-2px); }
+        .btn-wa {
+            background:#25D366; color:#fff; border:none; border-radius:50px;
+            font-family:'Montserrat',sans-serif; font-weight:600;
+            padding:12px 28px; box-shadow:0 8px 30px rgba(37,211,102,.3);
+            transition:var(--ease);
+        }
+        .btn-wa:hover { background:#20BD5A; color:#fff; transform:translateY(-2px); }
+
+        /* ========== HERO ========== */
+        .hero {
+            background:var(--hero-bg); min-height:100vh; display:flex;
+            align-items:center; position:relative; overflow:hidden; padding-top:100px;
+        }
+        .hero::before {
+            content:''; position:absolute; top:-50%; right:-20%;
+            width:800px; height:800px;
+            background:radial-gradient(circle,var(--sam-glow),transparent 70%);
+            border-radius:50%; animation:pulse 6s infinite;
+        }
+        .hero::after {
+            content:''; position:absolute; bottom:-30%; left:-10%;
+            width:600px; height:600px;
+            background:radial-gradient(circle,rgba(0,180,216,.15),transparent 70%);
+            border-radius:50%; animation:pulse 8s infinite reverse;
+        }
+        .hero-grid-bg {
+            position:absolute; inset:0;
+            background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),
+                linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);
+            background-size:60px 60px;
+        }
+        .hero-badge {
+            display:inline-flex; align-items:center; gap:8px; padding:8px 20px;
+            background:rgba(0,180,216,.1); border:1px solid rgba(0,180,216,.2);
+            border-radius:50px; color:var(--sam-light); font-size:.8rem;
+            font-weight:600; letter-spacing:1px; text-transform:uppercase;
+        }
+        .hero h1 { font-size:3.2rem; font-weight:900; color:#fff; line-height:1.1; }
+        .hero .highlight {
+            background:var(--sam-gradient); -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent; background-clip:text;
+        }
+        .hero-card {
+            background:rgba(255,255,255,.05); backdrop-filter:blur(20px);
+            border:1px solid rgba(255,255,255,.1); border-radius:24px; padding:36px;
+        }
+        .hero-card .icon-box {
+            width:64px; height:64px; background:var(--sam-gradient);
+            border-radius:18px; display:flex; align-items:center;
+            justify-content:center; font-size:1.6rem; color:#fff;
+            box-shadow:var(--shadow-sam);
+        }
+        .floating-card {
+            position:absolute; background:rgba(255,255,255,.1);
+            backdrop-filter:blur(15px); border:1px solid rgba(255,255,255,.15);
+            border-radius:16px; padding:16px 20px; animation:float 4s ease-in-out infinite;
+        }
+        .floating-card.fc1 { top:-24px; right:-16px; }
+        .floating-card.fc2 { bottom:-16px; left:-24px; animation-delay:2s; }
+        .stat-mini-icon {
+            width:40px; height:40px; background:var(--sam-gradient);
+            border-radius:10px; display:flex; align-items:center;
+            justify-content:center; color:#fff; flex-shrink:0;
+        }
+
+        /* ========== SECTION HELPERS ========== */
+        .sec-label {
+            display:inline-flex; align-items:center; gap:8px;
+            font-family:'Montserrat',sans-serif; font-size:.8rem;
+            font-weight:700; color:var(--sam); text-transform:uppercase;
+            letter-spacing:3px;
+        }
+        .sec-label::before,.sec-label::after {
+            content:''; width:28px; height:2px; background:var(--sam); border-radius:2px;
+        }
+        .sec-title { font-size:2.4rem; font-weight:800; }
+        .bg-sam-light { background:var(--bg-light); }
+
+        /* ========== TRUST CARDS ========== */
+        .trust-card {
+            border:1px solid rgba(0,0,0,.04); border-radius:16px;
+            transition:var(--ease); overflow:hidden; position:relative;
+        }
+        .trust-card::after {
+            content:''; position:absolute; top:0; left:0; width:100%; height:4px;
+            background:var(--sam-gradient); transform:scaleX(0); transition:transform .4s;
+        }
+        .trust-card:hover::after { transform:scaleX(1); }
+        .trust-card:hover { transform:translateY(-6px); box-shadow:0 16px 48px rgba(0,0,0,.1); }
+        .icon-wrap-80 {
+            width:76px; height:76px; background:rgba(0,180,216,.08);
+            border-radius:22px; display:flex; align-items:center;
+            justify-content:center; font-size:1.8rem; color:var(--sam);
+            transition:var(--ease);
+        }
+        .trust-card:hover .icon-wrap-80 { background:var(--sam-gradient); color:#fff; }
+        .num-big { font-family:'Montserrat',sans-serif; font-size:2.8rem; font-weight:900; line-height:1; }
+        .num-big .plus { color:var(--sam); }
+
+        /* ========== BENEFIT CARDS ========== */
+        .benefit-card {
+            border:1px solid rgba(0,0,0,.04); border-radius:16px;
+            transition:var(--ease); position:relative; overflow:hidden;
+        }
+        .benefit-card:hover { transform:translateY(-5px); box-shadow:0 16px 48px rgba(0,0,0,.1); border-color:rgba(0,180,216,.15); }
+        .benefit-num {
+            font-family:'Montserrat',sans-serif; font-size:3rem; font-weight:900;
+            color:rgba(0,180,216,.07); position:absolute; top:12px; right:16px;
+        }
+        .icon-wrap-52 {
+            width:52px; height:52px; background:rgba(0,180,216,.08);
+            border-radius:14px; display:flex; align-items:center;
+            justify-content:center; font-size:1.2rem; color:var(--sam);
+            transition:var(--ease);
+        }
+        .benefit-card:hover .icon-wrap-52 { background:var(--sam-gradient); color:#fff; }
+
+        /* ========== PRODUCT CARDS ========== */
+        .product-card {
+            border:1px solid rgba(0,0,0,.06); border-radius:16px;
+            overflow:hidden; transition:var(--ease);
+        }
+        .product-card:hover { transform:translateY(-6px); box-shadow:0 16px 48px rgba(0,0,0,.1); }
+        .product-img {
+            height:240px; position:relative; display:flex;
+            align-items:center; justify-content:center;
+        }
+        .product-img.auto { background:linear-gradient(135deg,#0F172A,#1E3A5F); }
+        .product-img.electro { background:linear-gradient(135deg,#0F172A,#1A3C34); }
+        .product-img .big-icon { font-size:4.5rem; color:rgba(255,255,255,.12); position:relative; z-index:2; }
+        .product-img::before {
+            content:''; position:absolute; width:180px; height:180px;
+            background:radial-gradient(circle,var(--sam-glow),transparent); border-radius:50%;
+        }
+        .product-tag {
+            position:absolute; top:16px; left:16px; padding:5px 14px;
+            background:var(--sam-gradient); color:#fff; font-family:'Montserrat',sans-serif;
+            font-weight:700; font-size:.7rem; border-radius:50px;
+            letter-spacing:1px; text-transform:uppercase;
+        }
+        .check-list li i { color:var(--sam); }
+
+        /* ========== PROCESS ========== */
+        .step-circle {
+            width:68px; height:68px; background:rgba(0,180,216,.1);
+            border:2px solid rgba(0,180,216,.3); border-radius:50%;
+            display:flex; align-items:center; justify-content:center;
+            font-family:'Montserrat',sans-serif; font-weight:900;
+            font-size:1.4rem; color:var(--sam); transition:var(--ease);
+        }
+        .process-step:hover .step-circle {
+            background:var(--sam-gradient); color:#fff;
+            border-color:var(--sam); box-shadow:var(--shadow-sam); transform:scale(1.08);
+        }
+        .timeline-line {
+            position:absolute; top:54px; left:14%; width:72%; height:2px;
+            background:linear-gradient(90deg,var(--sam),var(--sam-light),var(--sam));
+            opacity:.3;
+        }
+
+        /* ========== TECH ========== */
+        .tech-item {
+            display:flex; align-items:center; gap:14px; padding:14px 18px;
+            background:var(--bg-light); border-radius:10px; transition:var(--ease);
+        }
+        .tech-item:hover { background:rgba(0,180,216,.06); transform:translateX(4px); }
+        .feat-icon {
+            width:42px; height:42px; background:var(--sam-gradient);
+            border-radius:10px; display:flex; align-items:center;
+            justify-content:center; color:#fff; flex-shrink:0;
+        }
+        .dark-card {
+            background:var(--hero-bg); border-radius:20px;
+            padding:44px; position:relative; overflow:hidden;
+        }
+        .dark-card::before {
+            content:''; position:absolute; top:-50%; right:-50%;
+            width:280px; height:280px;
+            background:radial-gradient(circle,var(--sam-glow),transparent);
+            border-radius:50%;
+        }
+        .mini-card {
+            background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1);
+            border-radius:14px; padding:16px; text-align:center;
+        }
+        .mini-card i { font-size:1.4rem; color:var(--sam); }
+        .mini-card span { color:rgba(255,255,255,.7); font-size:.78rem; font-weight:500; }
+
+        /* ========== ABOUT ========== */
+        .about-dark {
+            background:var(--hero-bg); border-radius:20px;
+            padding:52px 44px; position:relative; overflow:hidden;
+        }
+        .about-dark::before {
+            content:''; position:absolute; bottom:-30%; right:-20%;
+            width:280px; height:280px;
+            background:radial-gradient(circle,var(--sam-glow),transparent);
+            border-radius:50%;
+        }
+        .stat-box {
+            background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1);
+            border-radius:14px; padding:18px; text-align:center; position:relative; z-index:2;
+        }
+        .stat-box strong { font-family:'Montserrat',sans-serif; font-size:1.4rem; font-weight:800; color:var(--sam); }
+        .stat-box span { font-size:.72rem; color:rgba(255,255,255,.5); }
+
+        /* ========== ALLIES ========== */
+        .reason-icon {
+            width:30px; height:30px; background:rgba(0,180,216,.1);
+            border-radius:50%; display:inline-flex; align-items:center;
+            justify-content:center; color:var(--sam); font-size:.75rem; flex-shrink:0;
+        }
+        .form-control:focus,.form-select:focus {
+            border-color:var(--sam); box-shadow:0 0 0 .2rem rgba(0,180,216,.15);
+        }
+
+        /* ========== CLIENT CARDS ========== */
+        .client-card {
+            border:1px solid rgba(0,0,0,.04); border-radius:16px; transition:var(--ease);
+        }
+        .client-card:hover { transform:translateY(-5px); box-shadow:0 16px 48px rgba(0,0,0,.1); }
+        .icon-wrap-68 {
+            width:68px; height:68px; background:rgba(0,180,216,.08);
+            border-radius:18px; display:flex; align-items:center;
+            justify-content:center; font-size:1.6rem; color:var(--sam);
+            transition:var(--ease);
+        }
+        .client-card:hover .icon-wrap-68 { background:var(--sam-gradient); color:#fff; }
+
+        /* ========== ACCORDION FAQ ========== */
+        .acc-sam .accordion-item {
+            border:1px solid rgba(0,0,0,.04); border-radius:14px!important;
+            margin-bottom:14px; overflow:hidden;
+        }
+        .acc-sam .accordion-button {
+            font-family:'Montserrat',sans-serif; font-weight:600;
+            color:var(--dark); background:#fff; padding:22px 24px;
+        }
+        .acc-sam .accordion-button:not(.collapsed) {
+            color:var(--sam); background:rgba(0,180,216,.03); box-shadow:none;
+        }
+        .acc-sam .accordion-button:focus { box-shadow:none; }
+        .acc-sam .accordion-button::after {
+            background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2300B4D8'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        }
+        .acc-sam .accordion-body { font-size:.93rem; color:var(--gray); line-height:1.8; padding:0 24px 22px; }
+
+        /* ========== CTA ========== */
+        .cta-dark {
+            background:var(--hero-bg); position:relative; overflow:hidden;
+        }
+        .cta-dark::before {
+            content:''; position:absolute; top:-50%; left:50%; transform:translateX(-50%);
+            width:700px; height:700px;
+            background:radial-gradient(circle,var(--sam-glow),transparent);
+            border-radius:50%; opacity:.4;
+        }
+
+        /* ========== CONTACT ========== */
+        .contact-card {
+            display:flex; align-items:center; gap:18px; padding:22px;
+            background:var(--bg-light); border-radius:14px;
+            border:1px solid rgba(0,0,0,.04); transition:var(--ease);
+        }
+        .contact-card:hover { transform:translateX(6px); box-shadow:0 8px 24px rgba(0,0,0,.06); }
+        .method-icon {
+            width:52px; height:52px; background:rgba(0,180,216,.08);
+            border-radius:14px; display:flex; align-items:center;
+            justify-content:center; font-size:1.2rem; color:var(--sam); flex-shrink:0;
+        }
+
+        /* ========== FOOTER ========== */
+        .footer-dark { background:var(--dark); }
+        .footer-dark a { color:rgba(255,255,255,.5); transition:var(--ease); }
+        .footer-dark a:hover { color:var(--sam); }
+        .social-icon {
+            width:38px; height:38px; background:rgba(255,255,255,.05);
+            border:1px solid rgba(255,255,255,.1); border-radius:10px;
+            display:inline-flex; align-items:center; justify-content:center;
+            color:rgba(255,255,255,.4); transition:var(--ease);
+        }
+        .social-icon:hover { background:var(--sam); border-color:var(--sam); color:#fff; }
+
+        /* ========== WA FLOAT ========== */
+        .wa-float {
+            position:fixed; bottom:28px; right:28px; width:62px; height:62px;
+            background:#25D366; border-radius:50%; display:flex;
+            align-items:center; justify-content:center; color:#fff;
+            font-size:1.7rem; box-shadow:0 8px 28px rgba(37,211,102,.4);
+            z-index:1050; transition:var(--ease);
+        }
+        .wa-float:hover { transform:scale(1.1); color:#fff; }
+        .wa-float::before {
+            content:''; position:absolute; width:100%; height:100%;
+            border-radius:50%; background:#25D366; animation:pulse 2s infinite; z-index:-1;
+        }
+
+        /* ========== SCROLL TOP ========== */
+        .scroll-top {
+            position:fixed; bottom:28px; right:106px; width:46px; height:46px;
+            background:var(--sam-gradient); border-radius:50%; border:none;
+            display:flex; align-items:center; justify-content:center;
+            color:#fff; z-index:1049; opacity:0; visibility:hidden;
+            transition:var(--ease); box-shadow:var(--shadow-sam);
+        }
+        .scroll-top.show { opacity:1; visibility:visible; }
+        .scroll-top:hover { transform:translateY(-3px); }
+
+        /* ========== RESPONSIVE ========== */
+        @media(max-width:991.98px){
+            .hero h1 { font-size:2.4rem; }
+            .sec-title { font-size:1.9rem; }
+            .timeline-line { display:none; }
+        }
+        @media(max-width:767.98px){
+            .hero { min-height:auto; padding:120px 0 60px; }
+            .hero h1 { font-size:2rem; }
+            .sec-title { font-size:1.65rem; }
+            .num-big { font-size:2.2rem; }
+        }
+        @media(max-width:575.98px){
+            .hero h1 { font-size:1.7rem; }
+            .sec-title { font-size:1.4rem; }
+        }
+    </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="100">
+
+<a href="#main" class="skip-link">Ir al contenido principal</a>
+
+<!-- ==================== NAVBAR ==================== -->
+<nav class="navbar navbar-expand-lg navbar-light navbar-sam fixed-top" id="mainNav" aria-label="Navegación principal">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#inicio" aria-label="SAM Latinoamérica">
+            <div class="logo-box" aria-hidden="true">SAM</div>
+            <div>
+                <span class="fw-bold font-heading">SAM <span style="color:var(--sam)">Latinoamérica</span></span>
+                <small class="d-block" style="font-size:.55rem;color:var(--gray);letter-spacing:2px;text-transform:uppercase;margin-top:-2px">Garantías Extendidas</small>
+            </div>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobMenu" aria-label="Abrir menú">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="deskNav">
+            <ul class="navbar-nav align-items-center gap-1">
+                <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#aliados">Aliados</a></li>
+                <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#tecnologia">Tecnología</a></li>
+                <li class="nav-item"><a class="nav-link" href="#nosotros">Quiénes Somos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                <li class="nav-item ms-2"><a href="#aliados" class="btn btn-sam btn-sm">Conviértete en Aliado</a></li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+<!-- ==================== MAIN ==================== -->
+<main id="main" role="main">
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="inicio" aria-label="Inicio">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="container position-relative" style="z-index:2">
+        <div class="row align-items-center gy-5">
+            <div class="col-lg-6">
+                <div class="hero-badge mb-4"><i class="fas fa-shield-alt" aria-hidden="true"></i> Más de 40 años de respaldo</div>
+                <h1 class="mb-3">Garantías Extendidas que <span class="highlight">fortalecen tu negocio</span></h1>
+                <p class="mb-4" style="font-size:1.1rem;color:rgba(255,255,255,.7);line-height:1.8;max-width:520px">
+                    En SAM Latinoamérica desarrollamos y gestionamos programas de Garantías Extendidas y Asistencias que ayudan a aseguradoras, bancos y comercios a aumentar ingresos, fidelizar clientes y diferenciar su oferta.
+                </p>
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="#aliados" class="btn btn-sam"><i class="fas fa-handshake me-2" aria-hidden="true"></i>Conviértete en Aliado</a>
+                    <a href="https://wa.me/18093337555" target="_blank" rel="noopener" class="btn btn-wa"><i class="fab fa-whatsapp me-2" aria-hidden="true"></i>Hablar por WhatsApp</a>
+                </div>
+            </div>
+            <div class="col-lg-6 d-none d-lg-block">
+                <div class="hero-card position-relative" aria-hidden="true">
+                    <div class="icon-box mb-3"><i class="fas fa-shield-alt"></i></div>
+                    <h2 class="h5 text-white mb-2">Programas a la medida</h2>
+                    <p class="text-white-50 small mb-0">Soluciones de garantía extendida adaptadas a tu modelo de negocio.</p>
+                    <div class="floating-card fc1">
+                        <div class="d-flex align-items-center gap-2">
+                            <div class="stat-mini-icon"><i class="fas fa-check-circle"></i></div>
+                            <div><strong class="text-white font-heading small">4,600+</strong><br><small class="text-white-50" style="font-size:.7rem">Reclamaciones</small></div>
+                        </div>
+                    </div>
+                    <div class="floating-card fc2">
+                        <div class="d-flex align-items-center gap-2">
+                            <div class="stat-mini-icon"><i class="fas fa-globe-americas"></i></div>
+                            <div><strong class="text-white font-heading small">Regional</strong><br><small class="text-white-50" style="font-size:.7rem">Latinoamérica</small></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TRUST ===== -->
+<section class="py-5" id="respaldo" aria-label="Respaldo" style="padding:90px 0!important">
+    <div class="container">
+        <header class="text-center mb-5 anim">
+            <div class="sec-label mb-2 d-flex justify-content-center">Respaldo y Confianza</div>
+            <h2 class="sec-title">Solidez que respalda cada garantía</h2>
+            <p class="text-muted mx-auto" style="max-width:620px">Más de 40 años de trayectoria nos respaldan como un aliado sólido y confiable en Latinoamérica.</p>
+        </header>
+        <div class="row g-4">
+            <div class="col-md-4 anim">
+                <article class="trust-card text-center bg-white p-4 p-lg-5 h-100">
+                    <div class="icon-wrap-80 mx-auto mb-3" aria-hidden="true"><i class="fas fa-landmark"></i></div>
+                    <div class="num-big mb-1">40<span class="plus">+</span></div>
+                    <h3 class="h6 fw-semibold mb-1">Años de Trayectoria</h3>
+                    <p class="small text-muted mb-0">Grupo empresarial con décadas de experiencia</p>
+                </article>
+            </div>
+            <div class="col-md-4 anim">
+                <article class="trust-card text-center bg-white p-4 p-lg-5 h-100">
+                    <div class="icon-wrap-80 mx-auto mb-3" aria-hidden="true"><i class="fas fa-chart-line"></i></div>
+                    <div class="num-big mb-1">4,600<span class="plus">+</span></div>
+                    <h3 class="h6 fw-semibold mb-1">Reclamaciones Gestionadas</h3>
+                    <p class="small text-muted mb-0">Procesadas exitosamente desde 2017</p>
+                </article>
+            </div>
+            <div class="col-md-4 anim">
+                <article class="trust-card text-center bg-white p-4 p-lg-5 h-100">
+                    <div class="icon-wrap-80 mx-auto mb-3" aria-hidden="true"><i class="fas fa-globe-americas"></i></div>
+                    <div class="num-big mb-1">LATAM</div>
+                    <h3 class="h6 fw-semibold mb-1">Presencia Regional</h3>
+                    <p class="small text-muted mb-0">Fondos de inversión internacionales y red de talleres</p>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== BENEFITS ===== -->
+<section class="bg-sam-light" id="beneficios" aria-label="Beneficios" style="padding:90px 0">
+    <div class="container">
+        <header class="text-center mb-5 anim">
+            <div class="sec-label mb-2 d-flex justify-content-center">Beneficios para Aliados</div>
+            <h2 class="sec-title">Ventajas de trabajar con SAM</h2>
+            <p class="text-muted mx-auto" style="max-width:600px">Potencia tu negocio con soluciones que generan valor sin complejidad operativa.</p>
+        </header>
+        <div class="row g-4">
+            <div class="col-sm-6 col-lg-3 anim">
+                <article class="benefit-card bg-white p-4 h-100">
+                    <div class="benefit-num" aria-hidden="true">01</div>
+                    <div class="icon-wrap-52 mb-3" aria-hidden="true"><i class="fas fa-arrow-trend-up"></i></div>
+                    <h3 class="h6 fw-bold">Aumenta tus ingresos</h3>
+                    <p class="small text-muted mb-0">Nuevas fuentes de rentabilidad sin riesgos adicionales.</p>
+                </article>
+            </div>
+            <div class="col-sm-6 col-lg-3 anim">
+                <article class="benefit-card bg-white p-4 h-100">
+                    <div class="benefit-num" aria-hidden="true">02</div>
+                    <div class="icon-wrap-52 mb-3" aria-hidden="true"><i class="fas fa-users"></i></div>
+                    <h3 class="h6 fw-bold">Fideliza tu cartera</h3>
+                    <p class="small text-muted mb-0">Valor agregado que mejora la experiencia de tus clientes.</p>
+                </article>
+            </div>
+            <div class="col-sm-6 col-lg-3 anim">
+                <article class="benefit-card bg-white p-4 h-100">
+                    <div class="benefit-num" aria-hidden="true">03</div>
+                    <div class="icon-wrap-52 mb-3" aria-hidden="true"><i class="fas fa-gears"></i></div>
+                    <h3 class="h6 fw-bold">Cero carga operativa</h3>
+                    <p class="small text-muted mb-0">SAM gestiona reclamaciones y pagos completos.</p>
+                </article>
+            </div>
+            <div class="col-sm-6 col-lg-3 anim">
+                <article class="benefit-card bg-white p-4 h-100">
+                    <div class="benefit-num" aria-hidden="true">04</div>
+                    <div class="icon-wrap-52 mb-3" aria-hidden="true"><i class="fas fa-server"></i></div>
+                    <h3 class="h6 fw-bold">Respaldo tecnológico</h3>
+                    <p class="small text-muted mb-0">Plataforma moderna, segura y escalable.</p>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PRODUCTS ===== -->
+<section id="productos" aria-label="Productos" style="padding:90px 0">
+    <div class="container">
+        <header class="text-center mb-5 anim">
+            <div class="sec-label mb-2 d-flex justify-content-center">Nuestros Productos</div>
+            <h2 class="sec-title">Soluciones diseñadas para crecer</h2>
+            <p class="text-muted mx-auto" style="max-width:600px">Programas de garantía extendida adaptados a distintos canales del mercado.</p>
+        </header>
+        <div class="row g-4">
+            <div class="col-lg-6 anim">
+                <article class="product-card bg-white h-100">
+                    <div class="product-img auto">
+                        <i class="fas fa-car big-icon" aria-hidden="true"></i>
+                        <span class="product-tag">Automotriz</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="h5 fw-bold mb-2">Garantía Mecánica Extendida</h3>
+                        <p class="text-muted small mb-3">Programa complementario para pólizas de vehículos o financiamientos automotrices.</p>
+                        <ul class="list-unstyled check-list mb-4">
+                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Cobertura de averías mecánicas de motor y transmisión</li>
+                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Deducible variable según antigüedad y kilometraje</li>
+                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Cobertura anual de hasta USD \$30,000</li>
+                            <li class="d-flex gap-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Red de talleres autorizados a nivel nacional</li>
+                        </ul>
+                        <a href="#aliados" class="btn btn-sam-out btn-sm"><i class="fas fa-arrow-right me-1" aria-hidden="true"></i>Más información</a>
+                    </div>
+                </article>
+            </div>
+            <div class="col-lg-6 anim">
+                <article class="product-card bg-white h-100">
+                    <div class="product-img electro">
+                        <i class="fas fa-tv big-icon" aria-hidden="true"></i>
+                        <span class="product-tag">Electrodomésticos</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="h5 fw-bold mb-2">Garantía Extendida para Electrodomésticos</h3>
+                        <p class="text-muted small mb-3">Solución complementaria para pólizas de hogar, créditos hipotecarios y retail.</p>
+                        <ul class="list-unstyled check-list mb-4">
+                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Cubre averías por mal funcionamiento</li>
+                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Sin deducible para el cliente final</li>
+                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Cobertura anual de hasta RD \$50,000</li>
+                            <li class="d-flex gap-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Gestión de reclamos rápida y transparente</li>
+                        </ul>
+                        <a href="#aliados" class="btn btn-sam-out btn-sm"><i class="fas fa-arrow-right me-1" aria-hidden="true"></i>Más información</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section style="background:var(--hero-bg);padding:90px 0" id="proceso" aria-label="Proceso">
+    <div class="container position-relative" style="z-index:2">
+        <header class="text-center mb-5 anim">
+            <div class="sec-label mb-2 d-flex justify-content-center" style="color:var(--sam-light)">Cómo Trabajamos</div>
+            <h2 class="sec-title text-white">Integración simple, resultados reales</h2>
+            <p class="text-white-50 mx-auto" style="max-width:600px">Un proceso diseñado para comercializar con confianza y sin fricción.</p>
+        </header>
+        <div class="row g-4 position-relative">
+            <div class="timeline-line d-none d-lg-block" aria-hidden="true"></div>
+            <div class="col-sm-6 col-lg-3 anim">
+                <div class="process-step text-center">
+                    <div class="step-circle mx-auto mb-3" aria-hidden="true">1</div>
+                    <h3 class="h6 fw-bold text-white mb-1">Diseñamos</h3>
+                    <p class="small text-white-50 mx-auto mb-0" style="max-width:200px">Programa de garantía a la medida de tu negocio.</p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3 anim">
+                <div class="process-step text-center">
+                    <div class="step-circle mx-auto mb-3" aria-hidden="true">2</div>
+                    <h3 class="h6 fw-bold text-white mb-1">Integramos</h3>
+                    <p class="small text-white-50 mx-auto mb-0" style="max-width:200px">Procesos y sistemas conectados con tu operación.</p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3 anim">
+                <div class="process-step text-center">
+                    <div class="step-circle mx-auto mb-3" aria-hidden="true">3</div>
+                    <h3 class="h6 fw-bold text-white mb-1">Comercializas</h3>
+                    <p class="small text-white-50 mx-auto mb-0" style="max-width:200px">Tu equipo vende con respaldo y marca SAM.</p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3 anim">
+                <div class="process-step text-center">
+                    <div class="step-circle mx-auto mb-3" aria-hidden="true">4</div>
+                    <h3 class="h6 fw-bold text-white mb-1">Gestionamos</h3>
+                    <p class="small text-white-50 mx-auto mb-0" style="max-width:200px">Administramos reclamaciones, pagos y soporte.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TECHNOLOGY ===== -->
+<section id="tecnologia" aria-label="Tecnología" style="padding:90px 0">
+    <div class="container">
+        <div class="row align-items-center gy-5">
+            <div class="col-lg-6 anim">
+                <div class="sec-label mb-2 d-flex">Tecnología y Seguridad</div>
+                <h2 class="sec-title mb-3">Infraestructura que garantiza eficiencia</h2>
+                <p class="text-muted mb-4" style="line-height:1.8">Sistema moderno de gestión de seguros, servidores de alta seguridad y procesos automatizados.</p>
+                <div class="d-grid gap-3">
+                    <div class="tech-item"><div class="feat-icon" aria-hidden="true"><i class="fas fa-cloud-arrow-up"></i></div><span class="fw-medium small">Sistema de gestión en la nube</span></div>
+                    <div class="tech-item"><div class="feat-icon" aria-hidden="true"><i class="fas fa-lock"></i></div><span class="fw-medium small">Servidores de alta seguridad</span></div>
+                    <div class="tech-item"><div class="feat-icon" aria-hidden="true"><i class="fas fa-robot"></i></div><span class="fw-medium small">Procesos automatizados</span></div>
+                    <div class="tech-item"><div class="feat-icon" aria-hidden="true"><i class="fas fa-chart-bar"></i></div><span class="fw-medium small">Reportería en tiempo real</span></div>
+                    <div class="tech-item"><div class="feat-icon" aria-hidden="true"><i class="fas fa-shield-halved"></i></div><span class="fw-medium small">Protección de datos</span></div>
+                </div>
+            </div>
+            <div class="col-lg-6 anim" aria-hidden="true">
+                <div class="dark-card">
+                    <div class="position-relative" style="z-index:2">
+                        <i class="fas fa-microchip d-block mb-3" style="font-size:3.5rem;color:var(--sam)"></i>
+                        <h3 class="h5 text-white fw-bold mb-2">Plataforma SAM</h3>
+                        <p class="text-white-50 small mb-4">Tecnología propia para gestión integral de garantías.</p>
+                        <div class="row g-3">
+                            <div class="col-6"><div class="mini-card"><i class="fas fa-bolt d-block mb-1"></i><span>Velocidad</span></div></div>
+                            <div class="col-6"><div class="mini-card"><i class="fas fa-expand d-block mb-1"></i><span>Escalable</span></div></div>
+                            <div class="col-6"><div class="mini-card"><i class="fas fa-fingerprint d-block mb-1"></i><span>Segura</span></div></div>
+                            <div class="col-6"><div class="mini-card"><i class="fas fa-plug d-block mb-1"></i><span>Integrable</span></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="bg-sam-light" id="nosotros" aria-label="Quiénes somos" style="padding:90px 0">
+    <div class="container">
+        <div class="row align-items-center gy-5">
+            <div class="col-lg-6 anim" aria-hidden="true">
+                <div class="about-dark">
+                    <div class="position-relative" style="z-index:2">
+                        <i class="fas fa-building d-block mb-3" style="font-size:2.8rem;color:var(--sam)"></i>
+                        <h3 class="h4 text-white fw-bold mb-3">SAM Latinoamérica</h3>
+                        <p class="text-white-50 small mb-4" style="line-height:1.8">Compañía dedicada al desarrollo, comercialización y gestión de Garantías Extendidas y Asistencias.</p>
+                        <div class="row g-3">
+                            <div class="col-6"><div class="stat-box"><strong>40+</strong><br><span>Años</span></div></div>
+                            <div class="col-6"><div class="stat-box"><strong>4,600+</strong><br><span>Reclamaciones</span></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 anim">
+                <div class="sec-label mb-2 d-flex">Quiénes Somos</div>
+                <h2 class="sec-title mb-3">Un aliado estratégico regional</h2>
+                <p class="text-muted mb-3" style="line-height:1.8">SAM Latinoamérica es una compañía dedicada al desarrollo, comercialización y gestión de Garantías Extendidas y Asistencias.</p>
+                <p class="text-muted mb-4" style="line-height:1.8">Con más de 40 años de trayectoria y respaldo de fondos de inversión internacionales.</p>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li class="d-flex align-items-center gap-3 fw-medium"><i class="fas fa-check-circle" style="color:var(--sam)" aria-hidden="true"></i>Experiencia regional comprobada</li>
+                    <li class="d-flex align-items-center gap-3 fw-medium"><i class="fas fa-check-circle" style="color:var(--sam)" aria-hidden="true"></i>Respaldo financiero sólido</li>
+                    <li class="d-flex align-items-center gap-3 fw-medium"><i class="fas fa-check-circle" style="color:var(--sam)" aria-hidden="true"></i>Operación integral end-to-end</li>
+                    <li class="d-flex align-items-center gap-3 fw-medium"><i class="fas fa-check-circle" style="color:var(--sam)" aria-hidden="true"></i>Procesos simples para tu equipo</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ALLIES + FORM ===== -->
+<section id="aliados" aria-label="Aliados" style="padding:90px 0">
+    <div class="container">
+        <header class="text-center mb-5 anim">
+            <div class="sec-label mb-2 d-flex justify-content-center">Aliados Estratégicos</div>
+            <h2 class="sec-title">Conviértete en Aliado SAM</h2>
+            <p class="text-muted mx-auto" style="max-width:620px">Integra Garantías Extendidas a tu portafolio con el respaldo de un socio estratégico regional.</p>
+        </header>
+        <div class="row gy-5">
+            <div class="col-lg-6 anim">
+                <h3 class="h4 fw-bold mb-3">Trabajamos como extensión de tu negocio</h3>
+                <p class="text-muted mb-4" style="line-height:1.8">Diseñamos, implementamos y administramos programas de Garantías Extendidas que fortalecen tu propuesta de valor y generan ingresos recurrentes.</p>
+                <h4 class="h6 fw-bold mb-3">¿Por qué SAM?</h4>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li class="d-flex align-items-center gap-3 fw-medium"><span class="reason-icon" aria-hidden="true"><i class="fas fa-check"></i></span>Experiencia regional comprobada</li>
+                    <li class="d-flex align-items-center gap-3 fw-medium"><span class="reason-icon" aria-hidden="true"><i class="fas fa-check"></i></span>Respaldo financiero sólido</li>
+                    <li class="d-flex align-items-center gap-3 fw-medium"><span class="reason-icon" aria-hidden="true"><i class="fas fa-check"></i></span>Operación integral end-to-end</li>
+                    <li class="d-flex align-items-center gap-3 fw-medium"><span class="reason-icon" aria-hidden="true"><i class="fas fa-check"></i></span>Nuevas fuentes de ingreso</li>
+                    <li class="d-flex align-items-center gap-3 fw-medium"><span class="reason-icon" aria-hidden="true"><i class="fas fa-check"></i></span>Diferenciación competitiva</li>
+                    <li class="d-flex align-items-center gap-3 fw-medium"><span class="reason-icon" aria-hidden="true"><i class="fas fa-check"></i></span>Cero carga operativa</li>
+                </ul>
+            </div>
+            <div class="col-lg-6 anim">
+                <div class="bg-white rounded-4 p-4 p-lg-5 shadow-sm border">
+                    <h3 class="h5 fw-bold mb-1">Solicita una propuesta</h3>
+                    <p class="small text-muted mb-4">Nuestro equipo te contactará a la brevedad.</p>
+                    <form id="allyForm" aria-label="Formulario de aliado">
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <label for="a-name" class="form-label small fw-semibold">Nombre *</label>
+                                <input type="text" class="form-control" id="a-name" name="nombre" required autocomplete="name">
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="a-company" class="form-label small fw-semibold">Empresa *</label>
+                                <input type="text" class="form-control" id="a-company" name="empresa" required autocomplete="organization">
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="a-pos" class="form-label small fw-semibold">Cargo</label>
+                                <input type="text" class="form-control" id="a-pos" name="cargo">
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="a-email" class="form-label small fw-semibold">Email *</label>
+                                <input type="email" class="form-control" id="a-email" name="email" required autocomplete="email">
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="a-country" class="form-label small fw-semibold">País *</label>
+                                <select class="form-select" id="a-country" name="pais" required>
+                                    <option value="">Selecciona</option>
+                                    <option>República Dominicana</option>
+                                    <option>México</option>
+                                    <option>Colombia</option>
+                                    <option>Panamá</option>
+                                    <option>Costa Rica</option>
+                                    <option>Guatemala</option>
+                                    <option>Ecuador</option>
+                                    <option>Perú</option>
+                                    <option>Chile</option>
+                                    <option>Otro</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="a-type" class="form-label small fw-semibold">Tipo empresa *</label>
+                                <select class="form-select" id="a-type" name="tipo" required>
+                                    <option value="">Selecciona</option>
+                                    <option>Aseguradora</option>
+                                    <option>Banco / Financiera</option>
+                                    <option>Dealer / Concesionario</option>
+                                    <option>Comercio / Retail</option>
+                                    <option>Otro</option>
+                                </select>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <button type="submit" class="btn btn-sam w-100 py-3">
+                                    <i class="fas fa-paper-plane me-2" aria-hidden="true"></i>Solicitar propuesta
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CLIENTS B2C ===== -->
+<section class="bg-sam-light" id="clientes" aria-label="Clientes" style="padding:90px 0">
+    <div class="container">
+        <header class="text-center mb-5 anim">
+            <div class="sec-label mb-2 d-flex justify-content-center">Para Clientes</div>
+            <h2 class="sec-title">¿Ya tienes una Garantía SAM?</h2>
+            <p class="text-muted mx-auto" style="max-width:600px">Información útil para afiliados: coberturas, talleres y soporte.</p>
+        </header>
+        <div class="row g-4">
+            <div class="col-md-4 anim">
+                <article class="client-card bg-white text-center p-4 p-lg-5 h-100">
+                    <div class="icon-wrap-68 mx-auto mb-3" aria-hidden="true"><i class="fas fa-file-shield"></i></div>
+                    <h3 class="h6 fw-bold">Tus Coberturas</h3>
+                    <p class="small text-muted mb-0">Consulta los detalles de tu póliza y cómo aprovecharla al máximo.</p>
+                </article>
+            </div>
+            <div class="col-md-4 anim">
+                <article class="client-card bg-white text-center p-4 p-lg-5 h-100">
+                    <div class="icon-wrap-68 mx-auto mb-3" aria-hidden="true"><i class="fas fa-wrench"></i></div>
+                    <h3 class="h6 fw-bold">Red de Talleres</h3>
+                    <p class="small text-muted mb-0">Encuentra talleres autorizados en tu zona para tu reclamación.</p>
+                </article>
+            </div>
+            <div class="col-md-4 anim">
+                <article class="client-card bg-white text-center p-4 p-lg-5 h-100">
+                    <div class="icon-wrap-68 mx-auto mb-3" aria-hidden="true"><i class="fas fa-headset"></i></div>
+                    <h3 class="h6 fw-bold">Soporte y Reclamos</h3>
+                    <p class="small text-muted mb-0">Reporta una avería o consulta el estado de tu caso.</p>
+                </article>
+            </div>
+        </div>
+        <div class="text-center mt-5 anim">
+            <a href="https://wa.me/18093337555" target="_blank" rel="noopener" class="btn btn-wa">
+                <i class="fab fa-whatsapp me-2" aria-hidden="true"></i>Contactar Soporte
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq" aria-label="Preguntas frecuentes" style="padding:90px 0">
+    <div class="container">
+        <header class="text-center mb-5 anim">
+            <div class="sec-label mb-2 d-flex justify-content-center">Preguntas Frecuentes</div>
+            <h2 class="sec-title">Resolvemos tus dudas</h2>
+            <p class="text-muted mx-auto" style="max-width:600px">Respuestas a las preguntas más comunes sobre Garantías Extendidas.</p>
+        </header>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="accordion acc-sam" id="faqAcc">
+
+                    <div class="accordion-item anim">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f1" aria-expanded="false">
+                                ¿Qué es una Garantía Extendida de SAM Latinoamérica?
+                            </button>
+                        </h3>
+                        <div id="f1" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+                            <div class="accordion-body">Es un programa complementario que extiende la protección original de vehículos o electrodomésticos, cubriendo averías mecánicas o por mal funcionamiento después de que vence la garantía del fabricante.</div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item anim">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f2" aria-expanded="false">
+                                ¿Quiénes pueden ser aliados de SAM Latinoamérica?
+                            </button>
+                        </h3>
+                        <div id="f2" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+                            <div class="accordion-body">Aseguradoras, bancos, financieras, dealers automotrices, concesionarios y comercios retail pueden integrar nuestros programas de Garantía Extendida a su portafolio de productos.</div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item anim">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f3" aria-expanded="false">
+                                ¿Cuánta cobertura ofrece la Garantía Mecánica Extendida?
+                            </button>
+                        </h3>
+                        <div id="f3" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+                            <div class="accordion-body">La Garantía Mecánica Extendida cubre averías de motor y transmisión con una cobertura anual de hasta USD \$30,000, con deducible variable según antigüedad y kilometraje del vehículo.</div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item anim">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f4" aria-expanded="false">
+                                ¿Cuántas reclamaciones ha gestionado SAM?
+                            </button>
+                        </h3>
+                        <div id="f4" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+                            <div class="accordion-body">Desde 2017, SAM Latinoamérica ha gestionado exitosamente más de 4,600 reclamaciones, respaldada por un grupo empresarial con más de 40 años de trayectoria.</div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item anim">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f5" aria-expanded="false">
+                                ¿Cómo me convierto en aliado de SAM?
+                            </button>
+                        </h3>
+                        <div id="f5" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+                            <div class="accordion-body">Puedes solicitar una propuesta personalizada a través de nuestro formulario web o contactarnos directamente por WhatsApp al +1 809 333 7555. Nuestro equipo diseñará un programa a la medida de tu negocio.</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CTA FINAL ===== -->
+<section class="cta-dark text-center" aria-label="Llamado a la acción" style="padding:90px 0">
+    <div class="container position-relative" style="z-index:2">
+        <div class="anim">
+            <h2 class="display-6 fw-bold text-white mb-3 mx-auto" style="max-width:680px">Conviértete en el aliado que tus clientes necesitan</h2>
+            <p class="text-white-50 mx-auto mb-4" style="max-width:520px;line-height:1.8">Habla hoy con nuestro equipo y descubre cómo integrar Garantías Extendidas a tu portafolio con el respaldo de SAM Latinoamérica.</p>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+                <a href="#aliados" class="btn btn-sam px-5 py-3"><i class="fas fa-handshake me-2" aria-hidden="true"></i>Conviértete en Aliado</a>
+                <a href="https://wa.me/18093337555" target="_blank" rel="noopener" class="btn btn-wa px-5 py-3"><i class="fab fa-whatsapp me-2" aria-hidden="true"></i>Hablar por WhatsApp</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contacto" aria-label="Contacto" style="padding:90px 0">
+    <div class="container">
+        <header class="text-center mb-5 anim">
+            <div class="sec-label mb-2 d-flex justify-content-center">Contacto</div>
+            <h2 class="sec-title">Estamos listos para ayudarte</h2>
+            <p class="text-muted mx-auto" style="max-width:600px">Nuestro equipo está listo para integrar Garantías Extendidas a tu portafolio.</p>
+        </header>
+        <div class="row gy-5">
+            <div class="col-lg-6 anim">
+                <h3 class="h4 fw-bold mb-3">¿Te interesa convertirte en aliado?</h3>
+                <p class="text-muted mb-4" style="line-height:1.8">Contáctanos directamente por cualquiera de nuestros canales.</p>
+                <address class="d-grid gap-3" style="font-style:normal">
+                    <a href="https://wa.me/18093337555" target="_blank" rel="noopener" class="contact-card text-decoration-none">
+                        <div class="method-icon" aria-hidden="true"><i class="fab fa-whatsapp"></i></div>
+                        <div><strong class="d-block small font-heading text-dark">WhatsApp</strong><span class="small text-muted">+1 809 333 7555</span></div>
+                    </a>
+                    <a href="mailto:info@samlatinoamerica.com" class="contact-card text-decoration-none">
+                        <div class="method-icon" aria-hidden="true"><i class="fas fa-envelope"></i></div>
+                        <div><strong class="d-block small font-heading text-dark">Email</strong><span class="small text-muted">info@samlatinoamerica.com</span></div>
+                    </a>
+                    <div class="contact-card">
+                        <div class="method-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
+                        <div><strong class="d-block small font-heading">Oficina Regional</strong><span class="small text-muted">Latinoamérica</span></div>
+                    </div>
+                </address>
+            </div>
+            <div class="col-lg-6 anim">
+                <div class="bg-sam-light rounded-4 p-4 p-lg-5 shadow-sm">
+                    <h3 class="h5 fw-bold mb-4">Envíanos un mensaje</h3>
+                    <form id="contactForm" aria-label="Formulario de contacto">
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <label for="c-name" class="form-label small fw-semibold">Nombre *</label>
+                                <input type="text" class="form-control" id="c-name" name="nombre" required autocomplete="name">
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="c-email" class="form-label small fw-semibold">Email *</label>
+                                <input type="email" class="form-control" id="c-email" name="email" required autocomplete="email">
+                            </div>
+                            <div class="col-12">
+                                <label for="c-company" class="form-label small fw-semibold">Empresa</label>
+                                <input type="text" class="form-control" id="c-company" name="empresa" autocomplete="organization">
+                            </div>
+                            <div class="col-12">
+                                <label for="c-msg" class="form-label small fw-semibold">Mensaje *</label>
+                                <textarea class="form-control" id="c-msg" name="mensaje" rows="4" required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-sam w-100 py-3">
+                                    <i class="fas fa-paper-plane me-2" aria-hidden="true"></i>Enviar mensaje
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer-dark py-5" role="contentinfo">
+    <div class="container">
+        <div class="row gy-4 mb-4">
+            <div class="col-lg-4">
+                <a href="#inicio" class="d-flex align-items-center gap-2 text-decoration-none mb-3" aria-label="SAM Latinoamérica">
+                    <div class="logo-box" aria-hidden="true">SAM</div>
+                    <div>
+                        <span class="fw-bold text-white font-heading">SAM <span style="color:var(--sam)">Latinoamérica</span></span>
+                        <small class="d-block" style="font-size:.55rem;color:rgba(255,255,255,.4);letter-spacing:2px;text-transform:uppercase">Garantías Extendidas</small>
+                    </div>
+                </a>
+                <p class="small" style="color:rgba(255,255,255,.5);max-width:280px;line-height:1.7">
+                    Desarrollo, comercialización y gestión de Garantías Extendidas y Asistencias para aseguradoras, bancos, dealers y comercios en Latinoamérica.
+                </p>
+            </div>
+            <div class="col-6 col-lg-2">
+                <h4 class="small fw-bold text-white text-uppercase mb-3 font-heading" style="letter-spacing:2px">Navegación</h4>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="#inicio" class="small">Inicio</a></li>
+                    <li><a href="#aliados" class="small">Aliados</a></li>
+                    <li><a href="#productos" class="small">Productos</a></li>
+                    <li><a href="#tecnologia" class="small">Tecnología</a></li>
+                    <li><a href="#nosotros" class="small">Quiénes Somos</a></li>
+                    <li><a href="#faq" class="small">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-lg-2">
+                <h4 class="small fw-bold text-white text-uppercase mb-3 font-heading" style="letter-spacing:2px">Productos</h4>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="#productos" class="small">Garantía Mecánica</a></li>
+                    <li><a href="#productos" class="small">Garantía Electro</a></li>
+                    <li><a href="#clientes" class="small">Zona Clientes</a></li>
+                    <li><a href="#aliados" class="small">Ser Aliado</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4">
+                <h4 class="small fw-bold text-white text-uppercase mb-3 font-heading" style="letter-spacing:2px">Contacto</h4>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="https://wa.me/18093337555" target="_blank" rel="noopener" class="small"><i class="fab fa-whatsapp me-2" aria-hidden="true"></i>+1 809 333 7555</a></li>
+                    <li><a href="mailto:info@samlatinoamerica.com" class="small"><i class="fas fa-envelope me-2" aria-hidden="true"></i>info@samlatinoamerica.com</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <hr style="border-color:rgba(255,255,255,.08)">
+
+        <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3 pt-2">
+            <p class="small mb-0" style="color:rgba(255,255,255,.3)">&copy; <span id="yr"></span> SAM Latinoamérica. Todos los derechos reservados.</p>
+            <div class="d-flex gap-2">
+                <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                <a href="https://wa.me/18093337555" target="_blank" rel="noopener" class="social-icon" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- WA Float -->
+<a href="https://wa.me/18093337555" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+</a>
+
+<!-- Scroll Top -->
+<button class="scroll-top" id="scrollBtn" aria-label="Volver arriba">
+    <i class="fas fa-chevron-up" aria-hidden="true"></i>
+</button>
+
+<!-- Noscript -->
+<noscript>
+    <style>.anim{opacity:1!important;transform:none!important}</style>
+</noscript>
+
+<!-- ==================== BOOTSTRAP JS ==================== -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- ==================== CUSTOM JS ==================== -->
+<script>
+(function(){
+    'use strict';
+
+    // Year
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Navbar scroll
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', function(){
+        nav.classList.toggle('scrolled', window.scrollY > 50);
+    }, {passive:true});
+
+    // Scroll top button
+    const stb = document.getElementById('scrollBtn');
+    window.addEventListener('scroll', function(){
+        stb.classList.toggle('show', window.scrollY > 500);
+    }, {passive:true});
+    stb.addEventListener('click', function(){
+        window.scrollTo({top:0, behavior:'smooth'});
+    });
+
+    // Animate on scroll
+    var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+            if(e.isIntersecting){
+                e.target.classList.add('show');
+                io.unobserve(e.target);
+            }
+        });
+    }, {threshold:0.1, rootMargin:'0px 0px -40px 0px'});
+
+    document.querySelectorAll('.anim').forEach(function(el){ io.observe(el); });
+
+    // Counter animation
+    var counted = false;
+    var trustSec = document.getElementById('respaldo');
+    if(trustSec){
+        new IntersectionObserver(function(entries){
+            entries.forEach(function(e){
+                if(e.isIntersecting && !counted){
+                    counted = true;
+                    document.querySelectorAll('.num-big').forEach(function(el){
+                        var txt = el.textContent;
+                        var m = txt.match(/[\d,]+/);
+                        if(m){
+                            var target = parseInt(m[0].replace(/,/g,''));
+                            var suffix = txt.replace(m[0],'');
+                            var start = performance.now();
+                            var dur = 2000;
+                            function step(now){
+                                var p = Math.min((now-start)/dur, 1);
+                                var ease = 1-Math.pow(1-p, 3);
+                                el.innerHTML = Math.floor(ease*target).toLocaleString() + suffix;
+                                if(p<1) requestAnimationFrame(step);
+                            }
+                            requestAnimationFrame(step);
+                        }
+                    });
+                }
+            });
+        }, {threshold:0.3}).observe(trustSec);
+    }
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){
+        a.addEventListener('click', function(e){
+            var href = this.getAttribute('href');
+            if(href === '#') return;
+            var t = document.querySelector(href);
+            if(t){
+                e.preventDefault();
+                var off = nav.offsetHeight + 10;
+                var top = t.getBoundingClientRect().top + window.pageYOffset - off;
+                window.scrollTo({top:top, behavior:'smooth'});
+                t.setAttribute('tabindex','-1');
+                t.focus({preventScroll:true});
+            }
+        });
+    });
+
+    // Form → WhatsApp
+    function bindForm(id, type){
+        var f = document.getElementById(id);
+        if(!f) return;
+        f.addEventListener('submit', function(e){
+            e.preventDefault();
+            var d = Object.fromEntries(new FormData(f));
+            var msg = '';
+            if(type === 'ally'){
+                msg = '¡Hola! Me interesa ser aliado SAM.\n\n'
+                    + '*Nombre:* '+d.nombre+'\n'
+                    + '*Empresa:* '+d.empresa+'\n'
+                    + '*Cargo:* '+(d.cargo||'N/A')+'\n'
+                    + '*Email:* '+d.email+'\n'
+                    + '*País:* '+d.pais+'\n'
+                    + '*Tipo:* '+d.tipo+'\n\n'
+                    + 'Solicito propuesta personalizada.';
+            } else {
+                msg = '¡Hola! Quisiera info sobre SAM.\n\n'
+                    + '*Nombre:* '+d.nombre+'\n'
+                    + '*Email:* '+d.email+'\n'
+                    + '*Empresa:* '+(d.empresa||'N/A')+'\n'
+                    + '*Mensaje:* '+d.mensaje;
+            }
+            var btn = f.querySelector('button[type="submit"]');
+            var orig = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check me-2"></i>Enviando...';
+            btn.style.background = '#25D366';
+            btn.disabled = true;
+            setTimeout(function(){
+                window.open('https://wa.me/18093337555?text='+encodeURIComponent(msg),'_blank');
+                btn.innerHTML = orig;
+                btn.style.background = '';
+                btn.disabled = false;
+                f.reset();
+            }, 800);
+        });
+    }
+    bindForm('allyForm','ally');
+    bindForm('contactForm','contact');
+
+    // Hero parallax
+    var tick = false;
+    window.addEventListener('scroll', function(){
+        if(!tick){
+            requestAnimationFrame(function(){
+                var hc = document.querySelector('.hero .col-lg-6:first-child');
+                if(hc && window.scrollY < window.innerHeight){
+                    hc.style.transform = 'translateY('+window.scrollY*0.1+'px)';
+                    hc.style.opacity = 1-(window.scrollY/(window.innerHeight*0.8));
+                }
+                tick = false;
+            });
+            tick = true;
+        }
+    }, {passive:true});
+
+    // Bootstrap ScrollSpy refresh
+    var ss = bootstrap.ScrollSpy.getOrCreateInstance(document.body, {
+        target:'#mainNav', offset:100, smoothScroll:true
+    });
+
+})();
+</script>
+
+</body>
+</html>
