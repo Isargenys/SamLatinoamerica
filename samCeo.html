@@ -136,7 +136,7 @@
         .hero-card{background:rgba(255,255,255,.05);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:36px}
         .hero-card .ic-box{width:64px;height:64px;background:var(--grad1);border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:#fff;box-shadow:var(--shadow1)}
         .fc{position:absolute;background:rgba(255,255,255,.1);backdrop-filter:blur(15px);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:16px 20px;animation:float 4s ease-in-out infinite}
-        .fc1{top:-24px;right:-16px}.fc2{bottom:-69px;left:-24px;animation-delay:2s}
+        .fc1{top:-24px;right:-16px}.fc2{bottom:-16px;left:-24px;animation-delay:2s}
         .sm-icon{width:40px;height:40px;background:var(--grad1);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0}
 
         /* ===== SECTION HELPERS ===== */
@@ -228,7 +228,7 @@
         .ft a:hover{color:var(--c4)}
         .si{width:38px;height:38px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;display:inline-flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);transition:var(--ease)}
         .si:hover{background:var(--c1);border-color:var(--c1);color:#fff}
-        .custom-image-footer { height: auto; width: 200px; }
+
         /* ===== WA FLOAT ===== */
         .waf{position:fixed;bottom:28px;right:28px;width:62px;height:62px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.7rem;box-shadow:0 8px 28px rgba(37,211,102,.4);z-index:1050;transition:var(--ease)}
         .waf:hover{transform:scale(1.1);color:#fff}
@@ -253,10 +253,9 @@
 <nav class="navbar navbar-expand-lg navbar-light nav-sam fixed-top" id="mainNav" aria-label="Navegación principal">
     <div class="container">
 
-        <!-- LOGO -->
       <!-- LOGO -->
 <a class="navbar-brand" href="#inicio" aria-label="SAM Latinoamérica - Inicio">
-    <img src="./img/LogoHorizontal2.png" 
+    <img src="/img/LogoHorizontal.png" 
          alt="SAM Latinoamérica - Garantías Extendidas" 
          height="65" 
          width="auto" 
@@ -278,7 +277,7 @@
             <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
                 <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
                 <li class="nav-item"><a class="nav-link" href="#aliados">Aliados</a></li>
-                <li class="nav-item"><a class="nav-link" href="#productos">Servicios</a></li>
+                <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
                 <li class="nav-item"><a class="nav-link" href="#tecnologia">Tecnología</a></li>
                 <li class="nav-item"><a class="nav-link" href="#nosotros">Quiénes Somos</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
@@ -302,7 +301,8 @@
                 <div class="hero-badge mb-4"><i class="fas fa-shield-alt" aria-hidden="true"></i> Más de 40 años de respaldo</div>
                 <h1 class="mb-3">Garantías Extendidas que <span class="hl">fortalecen tu negocio</span></h1>
                 <p class="mb-4" style="font-size:1.1rem;color:rgba(255,255,255,.7);line-height:1.8;max-width:520px">
-                    En SAM Latinoamérica desarrollamos y gestionamos programas de Garantías Extendidas y Asistencias que ayudan a aseguradoras, corredores, bancos, dealers, concesionarios, tiendas y comercios en general a aumentar ingresos, fidelizar clientes, diferenciar su oferta y eliminar riesgos.                </p>
+                    En SAM Latinoamérica desarrollamos y gestionamos programas de Garantías Extendidas y Asistencias que ayudan a aseguradoras, bancos y comercios a aumentar ingresos, fidelizar clientes y diferenciar su oferta.
+                </p>
                 <div class="d-flex flex-wrap gap-3">
                     <a href="#aliados" class="btn btn-s-gold"><i class="fas fa-handshake me-2" aria-hidden="true"></i>Conviértete en Aliado</a>
                     <a href="https://wa.me/18093337555" target="_blank" rel="noopener" class="btn btn-wa"><i class="fab fa-whatsapp me-2" aria-hidden="true"></i>Hablar por WhatsApp</a>
@@ -316,7 +316,7 @@
                     <div class="fc fc1">
                         <div class="d-flex align-items-center gap-2">
                             <div class="sm-icon"><i class="fas fa-check-circle"></i></div>
-                            <div><strong class="text-white fh small">Reclamaciones</strong><br><small class="text-white-50" style="font-size:.7rem">Pagadas</small></div>
+                            <div><strong class="text-white fh small">4,600+</strong><br><small class="text-white-50" style="font-size:.7rem">Reclamaciones</small></div>
                         </div>
                     </div>
                     <div class="fc fc2">
@@ -414,10 +414,10 @@
 </section>
 
 <!-- ===== PRODUCTS ===== -->
-<!-- <section id="productos" aria-label="Productos" style="padding:90px 0">
+<section id="productos" aria-label="Productos" style="padding:90px 0">
     <div class="container">
         <header class="text-center mb-5 ao">
-            <div class="slabel mb-2 d-flex justify-content-center">Nuestros Servicios</div>
+            <div class="slabel mb-2 d-flex justify-content-center">Nuestros Productos</div>
             <h2 class="stitle">Soluciones diseñadas para crecer</h2>
             <p class="text-muted mx-auto" style="max-width:600px">Programas de garantía extendida adaptados a distintos canales del mercado.</p>
         </header>
@@ -426,12 +426,12 @@
                 <article class="pc bg-white h-100">
                     <div class="pimg auto"><i class="fas fa-car bic" aria-hidden="true"></i><span class="ptag">Automotriz</span></div>
                     <div class="p-4">
-                        <h3 class="h5 fw-bold mb-2">Garantía Extendida</h3>
+                        <h3 class="h5 fw-bold mb-2">Garantía Mecánica Extendida</h3>
                         <p class="text-muted small mb-3">Programa complementario para pólizas de vehículos o financiamientos automotrices.</p>
                         <ul class="list-unstyled ck mb-4">
                             <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Cobertura de averías mecánicas de motor y transmisión</li>
                             <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Deducible variable según antigüedad y kilometraje</li>
-                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Cobertura anual de hasta RD$ 1,200,000</li>
+                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Cobertura anual de hasta USD \$30,000</li>
                             <li class="d-flex gap-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Red de talleres autorizados a nivel nacional</li>
                         </ul>
                         <a href="#aliados" class="btn btn-s-out btn-sm"><i class="fas fa-arrow-right me-1" aria-hidden="true"></i>Más información</a>
@@ -447,130 +447,13 @@
                         <ul class="list-unstyled ck mb-4">
                             <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Cubre averías por mal funcionamiento</li>
                             <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Sin deducible para el cliente final</li>
-                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Cobertura anual de hasta RD$ 500,000</li>
+                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Cobertura anual de hasta RD \$50,000</li>
                             <li class="d-flex gap-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Gestión de reclamos rápida y transparente</li>
                         </ul>
                         <a href="#aliados" class="btn btn-s-out btn-sm"><i class="fas fa-arrow-right me-1" aria-hidden="true"></i>Más información</a>
                     </div>
                 </article>
             </div>
-            
-        </div>
-    </div>
-</section> -->
-<section id="productos" aria-label="Productos" style="padding:90px 0">
-    <div class="container">
-        <header class="text-center mb-5 ao">
-            <div class="slabel mb-2 d-flex justify-content-center">Nuestros Servicios</div>
-            <h2 class="stitle">Soluciones diseñadas para crecer</h2>
-            <p class="text-muted mx-auto" style="max-width:600px">Programas de garantía extendida e inspección vehicular adaptados a distintos canales del mercado.</p>
-        </header>
-        <div class="row g-4">
-
-            <!-- GARANTÍA EXTENDIDA AUTOMOTRIZ -->
-            <div class="col-lg-4 ao">
-                <article class="pc bg-white h-100">
-                    <div class="pimg auto"><i class="fas fa-car bic" aria-hidden="true"></i><span class="ptag">Automotriz</span></div>
-                    <div class="p-4">
-                        <h3 class="h5 fw-bold mb-2">Garantía Extendida</h3>
-                        <p class="text-muted small mb-3">Programa complementario para pólizas de vehículos o financiamientos automotrices.</p>
-                        <ul class="list-unstyled ck mb-4">
-                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Cobertura de averías mecánicas de motor y transmisión</li>
-                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Deducible variable según antigüedad y kilometraje</li>
-                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Cobertura anual de hasta RD$ 1,200,000</li>
-                            <li class="d-flex gap-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Red de talleres autorizados a nivel nacional</li>
-                        </ul>
-                        <a href="#aliados" class="btn btn-s-out btn-sm"><i class="fas fa-arrow-right me-1" aria-hidden="true"></i>Más información</a>
-                    </div>
-                </article>
-            </div>
-
-            <!-- GARANTÍA EXTENDIDA ELECTRODOMÉSTICOS -->
-            <div class="col-lg-4 ao">
-                <article class="pc bg-white h-100">
-                    <div class="pimg elec"><i class="fas fa-tv bic" aria-hidden="true"></i><span class="ptag">Electrodomésticos</span></div>
-                    <div class="p-4">
-                        <h3 class="h5 fw-bold mb-2">Garantía Extendida para Electrodomésticos</h3>
-                        <p class="text-muted small mb-3">Solución complementaria para pólizas de hogar, créditos hipotecarios y retail.</p>
-                        <ul class="list-unstyled ck mb-4">
-                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Cubre averías por mal funcionamiento</li>
-                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Sin deducible para el cliente final</li>
-                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Cobertura anual de hasta RD$ 500,000</li>
-                            <li class="d-flex gap-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Gestión de reclamos rápida y transparente</li>
-                        </ul>
-                        
-                        <a href="#aliados" class="btn btn-s-out btn-sm"><i class="fas fa-arrow-right me-1" aria-hidden="true"></i>Más información</a>
-                    </div>
-                </article>
-            </div>
-<!-- INSPECCIÓN TÉCNICA VEHICULAR -->
-<div class="col-lg-4 ao">
-    <article class="pc bg-white h-100">
-        <div class="pimg" style="background:linear-gradient(135deg,#0e1f3a,#1a3a2e)">
-            <i class="fas fa-magnifying-glass bic" aria-hidden="true"></i>
-            <span class="ptag" style="background:var(--grad-gold)">Inspección</span>
-        </div>
-        <div class="p-4">
-            <h3 class="h5 fw-bold mb-2">Inspección Técnica Vehicular</h3>
-            <p class="text-muted small mb-3">
-                Evita vicios o fallas ocultas de motor, transmisión, sistema eléctrico o reparaciones deficientes antes de adquirir un vehículo.
-            </p>
-            <ul class="list-unstyled ck mb-3">
-                <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Servicio a domicilio</li>
-                <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Inspección de más de 90 puntos de motor, transmisión y sistema eléctrico</li>
-                <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Prueba de manejo incluida</li>
-                <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Revisión de códigos de falla con Scanner OBD</li>
-                <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Asesoría técnica personalizada</li>
-                <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Informe digital con fotos y videos por Mecánico SAM experto</li>
-                <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Reporte CarFax (opcional, si aplica)</li>
-                <li class="d-flex gap-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Descuentos de hasta 12.5% en mantenimientos preventivos y correctivos</li>
-            </ul>
-
-            <!-- Badge Pro Consumidor -->
-            <div class="d-flex align-items-center gap-2 mb-3 p-2 rounded-3" style="background:rgba(0,183,176,.06);border:1px solid rgba(0,183,176,.15)">
-                <i class="fas fa-certificate" style="color:var(--c1);font-size:1.1rem" aria-hidden="true"></i>
-                <span class="small fw-medium" style="color:var(--c2)">Avalados por Pro Consumidor No. 065/2021</span>
-            </div>
-
-            <a href="#aliados" class="btn btn-s-out btn-sm"><i class="fas fa-arrow-right me-1" aria-hidden="true"></i>Más información</a>
-        </div>
-    </article>
-</div>
-            <!-- INSPECCIÓN TÉCNICA VEHICULAR (NUEVO) -->
-            <!-- <div class="col-lg-4 ao">
-                <article class="pc bg-white h-100">
-                    <div class="pimg" style="background:linear-gradient(135deg,#0e1f3a,#1a3a2e)">
-                        <i class="fas fa-magnifying-glass bic" aria-hidden="true"></i>
-                        <span class="ptag" style="background:var(--grad-gold)">Inspección</span>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="h5 fw-bold mb-2">Inspección Técnica Vehicular</h3>
-                        <p class="text-muted small mb-3">
-                            Evita vicios o fallas ocultas de motor, transmisión, sistema eléctrico o reparaciones deficientes antes de adquirir un vehículo.
-                        </p>
-                        <ul class="list-unstyled ck mb-3">
-                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Servicio a domicilio</li>
-                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Inspección de más de 90 puntos de motor, transmisión y sistema eléctrico</li>
-                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Prueba de manejo incluida</li>
-                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Revisión de códigos de falla con Scanner OBD</li>
-                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Asesoría técnica personalizada</li>
-                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Informe digital con fotos y videos por Mecánico SAM experto</li>
-                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Reporte CarFax (opcional, si aplica)</li>
-                            <li class="d-flex gap-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Descuentos de hasta 12.5% en mantenimientos preventivos y correctivos</li>
-                        </ul>
-
-                        <div class="d-flex align-items-center gap-2 mb-3 p-2 rounded-3" style="background:rgba(0,183,176,.06);border:1px solid rgba(0,183,176,.15)">
-                            <i class="fas fa-certificate" style="color:var(--c1);font-size:1.1rem" aria-hidden="true"></i>
-                            <span class="small fw-medium" style="color:var(--c2)">Avalados por Pro Consumidor No. 065/2021</span>
-                        </div>
-                        <a href="#aliados" class="btn btn-s-out btn-sm"><i class="fas fa-arrow-right me-1" aria-hidden="true"></i>Más información</a>
-
-
-                     
-                    </div>
-                </article>
-            </div> -->
-
         </div>
     </div>
 </section>
@@ -753,7 +636,7 @@
                         </div>
                         <div class="accordion-item ao">
                             <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f3" aria-expanded="false">¿Cuánta cobertura ofrece la Garantía Mecánica Extendida?</button></h3>
-                            <div id="f3" class="accordion-collapse collapse" data-bs-parent="#faqAcc"><div class="accordion-body">La Garantía Mecánica Extendida cubre averías de motor y transmisión con una cobertura anual de hasta RD $1,200,000, con deducible variable según antigüedad y kilometraje del vehículo.</div></div>
+                            <div id="f3" class="accordion-collapse collapse" data-bs-parent="#faqAcc"><div class="accordion-body">La Garantía Mecánica Extendida cubre averías de motor y transmisión con una cobertura anual de hasta USD \$30,000, con deducible variable según antigüedad y kilometraje del vehículo.</div></div>
                         </div>
                         <div class="accordion-item ao">
                             <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f4" aria-expanded="false">¿Cuántas reclamaciones ha gestionado SAM?</button></h3>
@@ -835,9 +718,13 @@
         <div class="container">
             <div class="row gy-4 mb-4">
                 <div class="col-lg-4">
-                    <a href="#inicio" class="d-flex align-items-center gap-2 text-decoration-none mb-3" aria-label="SAM Latinoamérica">
-                        <img src="./img/logofooter.png" class="img-fluid custom-image-footer"  alt="logo en el footer de SAM Latinoamérica">
-                    </a>
+                    <!-- <a href="#inicio" class="d-flex align-items-center gap-2 text-decoration-none mb-3" aria-label="SAM Latinoamérica">
+                        <div class="logo-box" aria-hidden="true">SAM</div>
+                        <div>
+                            <span class="fw-bold text-white fh">SAM <span style="color:var(--c1)">Latinoamérica</span></span>
+                            <small class="d-block" style="font-size:.55rem;color:rgba(255,255,255,.4);letter-spacing:2px;text-transform:uppercase">Garantías Extendidas</small>
+                        </div>
+                    </a> -->
                     <p class="small" style="color:rgba(255,255,255,.5);max-width:280px;line-height:1.7">
                         Desarrollo, comercialización y gestión de Garantías Extendidas y Asistencias para aseguradoras, bancos, dealers y comercios en Latinoamérica.
                     </p>
@@ -1005,8 +892,7 @@
                 btn.style.background = '#25D366';
                 btn.disabled = true;
                 setTimeout(function(){
-                    // window.open('https://wa.me/18093337555?text='+encodeURIComponent(msg),'_blank');
-                    window.open('https://wa.me/18494528882?text='+encodeURIComponent(msg),'_blank');
+                    window.open('https://wa.me/18093337555?text='+encodeURIComponent(msg),'_blank');
                     btn.innerHTML = orig;
                     btn.style.background = '';
                     btn.disabled = false;
