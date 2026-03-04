@@ -169,7 +169,7 @@
         .pimg.auto{background:linear-gradient(135deg,#0e1f3a,#1e4976)}
         .pimg.elec{background:linear-gradient(135deg,#0e1f3a,#0e3d3e)}
         .pimg .bic{font-size:4.5rem;color:rgba(255,255,255,.12);position:relative;z-index:2}
-        .pimg::before{content:'';position:absolute;width:180px;height:180px;background:radial-gradient(circle,var(--c1glow),transparent);border-radius:50%}
+        /* .pimg::before{content:'';position:absolute;width:180px;height:180px;background:radial-gradient(circle,var(--c1glow),transparent);border-radius:50%} */
         .ptag{position:absolute;top:16px;left:16px;padding:5px 14px;background:var(--grad-gold);color:var(--c2);font-family:'Montserrat',sans-serif;font-weight:700;font-size:.7rem;border-radius:50px;letter-spacing:1px;text-transform:uppercase}
         .ck li i{color:var(--c1)}
 
@@ -204,6 +204,22 @@
         .cc:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(0,0,0,.1)}
         .iw68{width:68px;height:68px;background:rgba(0,183,176,.08);border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:var(--c1);transition:var(--ease)}
         .cc:hover .iw68{background:var(--grad1);color:#fff}
+
+        .custombg {
+            background-image: url('./img/hero_meet.jpg');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+
+        }
+
+        .custombg .container {
+            background: rgb(255 255 255 / 70%);
+            padding: 18px;
+            border-radius: 26px;
+        }
 
         /* ===== FAQ ===== */
         .afaq .accordion-item{border:1px solid rgba(0,0,0,.04);border-radius:14px!important;margin-bottom:14px;overflow:hidden}
@@ -470,17 +486,19 @@
             <!-- GARANTÍA EXTENDIDA AUTOMOTRIZ -->
             <div class="col-lg-4 ao">
                 <article class="pc bg-white h-100">
-                    <div class="pimg auto"><i class="fas fa-car bic" aria-hidden="true"></i><span class="ptag">Automotriz</span></div>
+                    <div class="pimg auto"><img src="./img/garantia_mecanica.jpg" style="width: 100%;" alt="taller mecanico con auto clasico rojo en reparacion"><span class="ptag">Automotriz</span></div>
                     <div class="p-4">
-                        <h3 class="h5 fw-bold mb-2">Garantía Extendida</h3>
+                        <h3 class="h5 fw-bold mb-2">Garantía Mecanica Extendida</h3>
                         <p class="text-muted small mb-3">Programa complementario para pólizas de vehículos o financiamientos automotrices.</p>
                         <ul class="list-unstyled ck mb-4">
                             <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Cobertura de averías mecánicas de motor y transmisión</li>
                             <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Deducible variable según antigüedad y kilometraje</li>
                             <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Cobertura anual de hasta RD$ 1,200,000</li>
-                            <li class="d-flex gap-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Red de talleres autorizados a nivel nacional</li>
+                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Red de talleres autorizados a nivel nacional</li>
+                            <li class="d-flex gap-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Contrata nuestra garantía mecánica extendida a traves de tu seguro para que SEA FULL pero de verdad.</li>
                         </ul>
                         <a href="#aliados" class="btn btn-s-out btn-sm"><i class="fas fa-arrow-right me-1" aria-hidden="true"></i>Más información</a>
+                        <a href="./img/precios.pdf#toolbar=0&navpanes=0&scrollbar=0" target="_blank" class="btn btn-s-gold btn-sm w-75 mt-3">Ver Coberturas y Precios</a>
                     </div>
                 </article>
             </div>
@@ -488,7 +506,7 @@
             <!-- GARANTÍA EXTENDIDA ELECTRODOMÉSTICOS -->
             <div class="col-lg-4 ao">
                 <article class="pc bg-white h-100">
-                    <div class="pimg elec"><i class="fas fa-tv bic" aria-hidden="true"></i><span class="ptag">Electrodomésticos</span></div>
+                    <div class="pimg elec"><img src="./img/electrodomesticos.jpg" style="width: 100%;" alt="imagen de electrodomesticos modernos"><span class="ptag">Electrodomésticos</span></div>
                     <div class="p-4">
                         <h3 class="h5 fw-bold mb-2">Garantía Extendida para Electrodomésticos</h3>
                         <p class="text-muted small mb-3">Solución complementaria para pólizas de hogar, créditos hipotecarios y retail.</p>
@@ -503,39 +521,39 @@
                     </div>
                 </article>
             </div>
-<!-- INSPECCIÓN TÉCNICA VEHICULAR -->
-<div class="col-lg-4 ao">
-    <article class="pc bg-white h-100">
-        <div class="pimg" style="background:linear-gradient(135deg,#0e1f3a,#1a3a2e)">
-            <i class="fas fa-magnifying-glass bic" aria-hidden="true"></i>
-            <span class="ptag" style="background:var(--grad-gold)">Inspección</span>
-        </div>
-        <div class="p-4">
-            <h3 class="h5 fw-bold mb-2">Inspección Técnica Vehicular</h3>
-            <p class="text-muted small mb-3">
-                Evita vicios o fallas ocultas de motor, transmisión, sistema eléctrico o reparaciones deficientes antes de adquirir un vehículo.
-            </p>
-            <ul class="list-unstyled ck mb-3">
-                <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Servicio a domicilio</li>
-                <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Inspección de más de 90 puntos de motor, transmisión y sistema eléctrico</li>
-                <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Prueba de manejo incluida</li>
-                <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Revisión de códigos de falla con Scanner OBD</li>
-                <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Asesoría técnica personalizada</li>
-                <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Informe digital con fotos y videos por Mecánico SAM experto</li>
-                <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Reporte CarFax (opcional, si aplica)</li>
-                <li class="d-flex gap-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Descuentos de hasta 12.5% en mantenimientos preventivos y correctivos</li>
-            </ul>
+            <!-- INSPECCIÓN TÉCNICA VEHICULAR -->
+            <div class="col-lg-4 ao">
+                <article class="pc bg-white h-100">
+                    <div class="pimg" style="background:linear-gradient(135deg,#0e1f3a,#1a3a2e)">
+                        <img src="./img/inspeccion_vehicular.jpg" style="width: 100%;" alt="mecanico inspeccionando un vehiculo con una linterna LED">
+                        <span class="ptag" style="background:var(--grad-gold)">Inspección</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="h5 fw-bold mb-2">Inspección Técnica Vehicular</h3>
+                        <p class="text-muted small mb-3">
+                            Evita vicios o fallas ocultas de motor, transmisión, sistema eléctrico o reparaciones deficientes antes de adquirir un vehículo.
+                        </p>
+                        <ul class="list-unstyled ck mb-3">
+                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Servicio a domicilio</li>
+                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Inspección de más de 90 puntos de motor, transmisión y sistema eléctrico</li>
+                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Prueba de manejo incluida</li>
+                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Revisión de códigos de falla con Scanner OBD</li>
+                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Asesoría técnica personalizada</li>
+                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Informe digital con fotos y videos por Mecánico SAM experto</li>
+                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Reporte CarFax (opcional, si aplica)</li>
+                            <li class="d-flex gap-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Descuentos de hasta 12.5% en mantenimientos preventivos y correctivos</li>
+                        </ul>
 
-            <!-- Badge Pro Consumidor -->
-            <div class="d-flex align-items-center gap-2 mb-3 p-2 rounded-3" style="background:rgba(0,183,176,.06);border:1px solid rgba(0,183,176,.15)">
-                <i class="fas fa-certificate" style="color:var(--c1);font-size:1.1rem" aria-hidden="true"></i>
-                <span class="small fw-medium" style="color:var(--c2)">Avalados por Pro Consumidor No. 065/2021</span>
+                        <!-- Badge Pro Consumidor -->
+                        <div class="d-flex align-items-center gap-2 mb-3 p-2 rounded-3" style="background:rgba(0,183,176,.06);border:1px solid rgba(0,183,176,.15)">
+                            <i class="fas fa-certificate" style="color:var(--c1);font-size:1.1rem" aria-hidden="true"></i>
+                            <span class="small fw-medium" style="color:var(--c2)"><a href="./img/proconsumidor_documento.jpeg" target="_blank">Avalados por Pro Consumidor No. 065/2021</a></span>
+                        </div>
+
+                        <a href="#aliados" class="btn btn-s-out btn-sm"><i class="fas fa-arrow-right me-1" aria-hidden="true"></i>Más información</a>
+                    </div>
+                </article>
             </div>
-
-            <a href="#aliados" class="btn btn-s-out btn-sm"><i class="fas fa-arrow-right me-1" aria-hidden="true"></i>Más información</a>
-        </div>
-    </article>
-</div>
             <!-- INSPECCIÓN TÉCNICA VEHICULAR (NUEVO) -->
             <!-- <div class="col-lg-4 ao">
                 <article class="pc bg-white h-100">
@@ -715,7 +733,7 @@
 </section>
 
 <!-- ===== CLIENTS ===== -->
-<section class="bg-l" id="clientes" aria-label="Clientes" style="padding:90px 0">
+<section class="bg-l custombg" id="clientes" aria-label="Clientes" style="padding:90px 0">
     <div class="container">
         <header class="text-center mb-5 ao">
             <div class="slabel mb-2 d-flex justify-content-center">Para Clientes</div>
@@ -836,7 +854,7 @@
             <div class="row gy-4 mb-4">
                 <div class="col-lg-4">
                     <a href="#inicio" class="d-flex align-items-center gap-2 text-decoration-none mb-3" aria-label="SAM Latinoamérica">
-                        <img src="./img/logofooter.png" class="img-fluid custom-image-footer"  alt="logo en el footer de SAM Latinoamérica">
+                        <img src="./img/logofooter2.png" class="img-fluid custom-image-footer"  alt="logo en el footer de SAM Latinoamérica">
                     </a>
                     <p class="small" style="color:rgba(255,255,255,.5);max-width:280px;line-height:1.7">
                         Desarrollo, comercialización y gestión de Garantías Extendidas y Asistencias para aseguradoras, bancos, dealers y comercios en Latinoamérica.
