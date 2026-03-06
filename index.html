@@ -49,6 +49,580 @@
             --shadow-gold: 0 8px 30px rgba(248,183,82,.3);
             --ease: all .4s cubic-bezier(.25,.46,.45,.94);
         }
+/* ========== BANNER SEGUROS AUTO ========== */
+.banner-auto {
+    background: linear-gradient(135deg, #f8fafb 0%, #fff 50%, #f8fafb 100%);
+    padding: 24px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Línea superior */
+.banner-auto-accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--c1), var(--c4), var(--c1));
+}
+
+/* Card */
+.banner-auto-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    padding: 20px 28px;
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, .06);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, .04);
+    position: relative;
+}
+
+.banner-auto-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--c1), var(--c4));
+    border-radius: 16px 0 0 16px;
+}
+
+/* Sello con anillo */
+.banner-auto-seal-wrap {
+    position: relative;
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+}
+
+.banner-auto-seal {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, rgba(0, 183, 176, .08), rgba(248, 183, 82, .08));
+    border: 1px solid rgba(0, 183, 176, .15);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: var(--c1);
+    position: relative;
+    z-index: 2;
+    transition: var(--ease);
+}
+
+.banner-auto-card:hover .banner-auto-seal {
+    background: linear-gradient(135deg, rgba(0, 183, 176, .12), rgba(248, 183, 82, .12));
+    border-color: rgba(0, 183, 176, .25);
+}
+
+.auto-seal-ring {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 66px;
+    height: 66px;
+    stroke: var(--c4);
+    opacity: .4;
+    animation: autoSealSpin 20s linear infinite;
+}
+
+@keyframes autoSealSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Dot */
+.banner-auto-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--c1);
+    border-radius: 50%;
+    display: inline-block;
+    animation: autoDotPulse 2s ease-in-out infinite;
+}
+
+@keyframes autoDotPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .4; transform: scale(.8); }
+}
+
+/* Tag FULL */
+.banner-auto-tag {
+    font-family: 'Montserrat', sans-serif;
+    font-size: .55rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--c4);
+    padding: 2px 8px;
+    border: 1.5px solid rgba(248, 183, 82, .3);
+    border-radius: 4px;
+    background: rgba(248, 183, 82, .08);
+    line-height: 1.4;
+}
+
+/* Textos */
+.banner-auto-overline {
+    font-family: 'Montserrat', sans-serif;
+    font-size: .68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--c1);
+}
+
+.banner-auto-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--c2);
+    margin-bottom: 2px;
+    line-height: 1.3;
+}
+
+.banner-auto-hl {
+    background: linear-gradient(90deg, var(--c1), var(--c1d));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+}
+
+.banner-auto-sub {
+    font-size: .78rem;
+    color: var(--c3);
+    margin-bottom: 0;
+}
+
+/* Botón */
+.btn-auto {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 24px;
+    background: var(--c2);
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 12px;
+    border: none;
+    text-decoration: none;
+    transition: var(--ease);
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-auto::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .06), transparent);
+    transition: left .6s ease;
+}
+
+.btn-auto:hover::before {
+    left: 100%;
+}
+
+.btn-auto:hover {
+    background: var(--c1d);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(2, 123, 127, .25);
+}
+
+.btn-auto-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, .1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+    transition: var(--ease);
+}
+
+.btn-auto:hover .btn-auto-icon {
+    background: rgba(255, 255, 255, .2);
+}
+
+.btn-auto-text {
+    text-align: left;
+    line-height: 1.2;
+}
+
+.btn-auto-text small {
+    display: block;
+    font-size: .6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: .6;
+}
+
+.btn-auto-text strong {
+    display: block;
+    font-size: .85rem;
+    font-weight: 700;
+}
+
+.btn-auto-arrow {
+    font-size: .75rem;
+    opacity: .4;
+    transition: var(--ease);
+}
+
+.btn-auto:hover .btn-auto-arrow {
+    opacity: 1;
+    transform: translateX(3px);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 991.98px) {
+    .banner-auto-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px;
+        gap: 20px;
+    }
+
+    .banner-auto-card::before {
+        width: 100%;
+        height: 4px;
+        left: 0;
+        top: 0;
+        border-radius: 16px 16px 0 0;
+    }
+
+    .banner-auto-card > .d-flex {
+        flex-direction: column;
+    }
+
+    .banner-auto-dot {
+        display: none;
+    }
+
+    .btn-auto {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .banner-auto {
+        padding: 16px 0;
+    }
+
+    .banner-auto-heading {
+        font-size: .92rem;
+    }
+
+    .banner-auto-sub {
+        font-size: .72rem;
+    }
+
+    .banner-auto-seal-wrap {
+        width: 48px;
+        height: 48px;
+    }
+
+    .banner-auto-seal {
+        width: 48px;
+        height: 48px;
+        font-size: 1.2rem;
+        border-radius: 14px;
+    }
+
+    .auto-seal-ring {
+        width: 58px;
+        height: 58px;
+        top: -5px;
+        left: -5px;
+    }
+
+    .btn-auto {
+        padding: 10px 18px;
+    }
+
+    .btn-auto-text strong {
+        font-size: .78rem;
+    }
+}
+/* ===== BANNER PRO CONSUMIDOR ===== */
+.banner-pro {
+    background: linear-gradient(135deg, #f8fafb 0%, #fff 50%, #f8fafb 100%);
+    padding: 24px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Línea superior turquesa a dorado */
+.banner-accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--c1), var(--c4), var(--c1));
+}
+
+/* Card interior */
+.banner-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    padding: 20px 28px;
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid rgba(0,0,0,.06);
+    box-shadow: 0 4px 24px rgba(0,0,0,.04);
+    position: relative;
+}
+.banner-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--c1), var(--c4));
+    border-radius: 16px 0 0 16px;
+}
+
+/* Sello con anillo SVG */
+.banner-seal-wrap {
+    position: relative;
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+}
+.banner-seal {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, rgba(0,183,176,.08), rgba(248,183,82,.08));
+    border: 1px solid rgba(0,183,176,.15);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: var(--c1);
+    position: relative;
+    z-index: 2;
+    transition: var(--ease);
+}
+.banner-card:hover .banner-seal {
+    background: linear-gradient(135deg, rgba(0,183,176,.12), rgba(248,183,82,.12));
+    border-color: rgba(0,183,176,.25);
+}
+.seal-ring {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 66px;
+    height: 66px;
+    stroke: var(--c4);
+    opacity: .4;
+    animation: sealSpin 20s linear infinite;
+}
+@keyframes sealSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Dot verde */
+.banner-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--c1);
+    border-radius: 50%;
+    display: inline-block;
+    animation: dotPulse 2s ease-in-out infinite;
+}
+@keyframes dotPulse {
+    0%,100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .4; transform: scale(.8); }
+}
+
+/* Textos */
+.banner-overline {
+    font-family: 'Montserrat', sans-serif;
+    font-size: .68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--c1);
+}
+.banner-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--c2);
+    margin-bottom: 2px;
+    line-height: 1.3;
+}
+.banner-hl {
+    background: linear-gradient(90deg, var(--c1), var(--c1d));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+}
+.banner-sub {
+    font-size: .78rem;
+    color: var(--c3);
+    margin-bottom: 0;
+}
+
+/* Botón */
+.btn-doc {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 24px;
+    background: var(--c2);
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 12px;
+    border: none;
+    text-decoration: none;
+    transition: var(--ease);
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+}
+.btn-doc::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.06), transparent);
+    transition: left .6s ease;
+}
+.btn-doc:hover::before {
+    left: 100%;
+}
+.btn-doc:hover {
+    background: var(--c1d);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(2,123,127,.25);
+}
+.btn-doc-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(255,255,255,.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+    transition: var(--ease);
+}
+.btn-doc:hover .btn-doc-icon {
+    background: rgba(255,255,255,.2);
+}
+.btn-doc-text {
+    text-align: left;
+    line-height: 1.2;
+}
+.btn-doc-text small {
+    display: block;
+    font-size: .6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: .6;
+}
+.btn-doc-text strong {
+    display: block;
+    font-size: .85rem;
+    font-weight: 700;
+}
+.btn-doc-arrow {
+    font-size: .75rem;
+    opacity: .4;
+    transition: var(--ease);
+}
+.btn-doc:hover .btn-doc-arrow {
+    opacity: 1;
+    transform: translateX(3px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 991.98px) {
+    .banner-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px;
+        gap: 20px;
+    }
+    .banner-card::before {
+        width: 100%;
+        height: 4px;
+        left: 0;
+        top: 0;
+        border-radius: 16px 16px 0 0;
+    }
+    .banner-card > .d-flex {
+        flex-direction: column;
+    }
+    .banner-dot {
+        display: none;
+    }
+    .btn-doc {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .banner-pro {
+        padding: 16px 0;
+    }
+    .banner-heading {
+        font-size: .92rem;
+    }
+    .banner-sub {
+        font-size: .72rem;
+    }
+    .banner-seal-wrap {
+        width: 48px;
+        height: 48px;
+    }
+    .banner-seal {
+        width: 48px;
+        height: 48px;
+        font-size: 1.2rem;
+        border-radius: 14px;
+    }
+    .seal-ring {
+        width: 58px;
+        height: 58px;
+        top: -5px;
+        left: -5px;
+    }
+    .btn-doc {
+        padding: 10px 18px;
+    }
+    .btn-doc-text strong {
+        font-size: .78rem;
+    }
+}
 
 /* ===== LOGO ===== */
 .logo-img {
@@ -320,7 +894,7 @@
                 <p class="mb-4" style="font-size:1.1rem;color:rgba(255,255,255,.7);line-height:1.8;max-width:520px">
                     En SAM Latinoamérica desarrollamos y gestionamos programas de Garantías Extendidas y Asistencias que ayudan a aseguradoras, corredores, bancos, dealers, concesionarios, tiendas y comercios en general a aumentar ingresos, fidelizar clientes, diferenciar su oferta y eliminar riesgos.                </p>
                 <div class="d-flex flex-wrap gap-3">
-                    <a href="#aliados" class="btn btn-s-gold"><i class="fas fa-handshake me-2" aria-hidden="true"></i>Conviértete en Aliado</a>
+                    <a href="https://wa.me/18093337555" target="_blank" class="btn btn-s-gold"><i class="fas fa-handshake me-2" aria-hidden="true"></i>Adquiere tu Garantía</a>
                     <a href="https://wa.me/18093337555" target="_blank" rel="noopener" class="btn btn-wa"><i class="fab fa-whatsapp me-2" aria-hidden="true"></i>Hablar por WhatsApp</a>
                 </div>
             </div>
@@ -332,7 +906,7 @@
                     <div class="fc fc1">
                         <div class="d-flex align-items-center gap-2">
                             <div class="sm-icon"><i class="fas fa-check-circle"></i></div>
-                            <div><strong class="text-white fh small">Reclamaciones</strong><br><small class="text-white-50" style="font-size:.7rem">Pagadas</small></div>
+                            <div><strong class="text-white fh small">4,600+</strong><br><small class="text-white-50" style="font-size:.7rem">Reclamaciones pagadas</small></div>
                         </div>
                     </div>
                     <div class="fc fc2">
@@ -346,6 +920,57 @@
         </div>
     </div>
 </section>
+
+            <!-- ===== BANNER PRO CONSUMIDOR ===== -->
+            <div class="banner-pro" id="bannerPro">
+                <div class="banner-accent" aria-hidden="true"></div>
+                <div class="container position-relative" style="z-index:2">
+                    <div class="banner-card">
+                        
+                        <!-- Izquierda -->
+                        <div class="d-flex align-items-center gap-3 gap-lg-4">
+                            <!-- Sello -->
+                            <div class="banner-seal-wrap">
+                                <div class="banner-seal">
+                                    <i class="fas fa-award"></i>
+                                </div>
+                                <svg class="seal-ring" viewBox="0 0 100 100" aria-hidden="true">
+                                    <circle cx="50" cy="50" r="46" fill="none" stroke-width="1.5" stroke-dasharray="4 3"/>
+                                </svg>
+                            </div>
+            
+                            <!-- Texto -->
+                            <div>
+                                <div class="d-flex align-items-center gap-2 mb-1">
+                                    <span class="banner-dot" aria-hidden="true"></span>
+                                    <span class="banner-overline">Registro Oficial Verificado</span>
+                                </div>
+                                <h2 class="banner-heading">
+                                    Avalados por <span class="banner-hl">Pro Consumidor</span> No. 065/2021
+                                </h2>
+                                <p class="banner-sub">Compromiso con la transparencia y protección al consumidor</p>
+                            </div>
+                        </div>
+            
+                        <!-- Derecha -->
+                        <a href="/img/proconsumidor_documento.jpeg" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="btn-doc">
+                            <div class="btn-doc-icon">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="btn-doc-text">
+                                <small>Documento oficial</small>
+                                <strong>Consultar PDF</strong>
+                            </div>
+                            <i class="fas fa-arrow-right btn-doc-arrow"></i>
+                        </a>
+            
+                    </div>
+                </div>
+            </div>
+
 
 <!-- ===== TRUST ===== -->
 <section id="respaldo" aria-label="Respaldo" style="padding:90px 0">
@@ -383,6 +1008,8 @@
         </div>
     </div>
 </section>
+
+
 
 <!-- ===== BENEFITS ===== -->
 <section class="bg-l" id="beneficios" aria-label="Beneficios" style="padding:90px 0">
@@ -429,51 +1056,7 @@
     </div>
 </section>
 
-<!-- ===== PRODUCTS ===== -->
-<!-- <section id="productos" aria-label="Productos" style="padding:90px 0">
-    <div class="container">
-        <header class="text-center mb-5 ao">
-            <div class="slabel mb-2 d-flex justify-content-center">Nuestros Servicios</div>
-            <h2 class="stitle">Soluciones diseñadas para crecer</h2>
-            <p class="text-muted mx-auto" style="max-width:600px">Programas de garantía extendida adaptados a distintos canales del mercado.</p>
-        </header>
-        <div class="row g-4">
-            <div class="col-lg-6 ao">
-                <article class="pc bg-white h-100">
-                    <div class="pimg auto"><i class="fas fa-car bic" aria-hidden="true"></i><span class="ptag">Automotriz</span></div>
-                    <div class="p-4">
-                        <h3 class="h5 fw-bold mb-2">Garantía Extendida</h3>
-                        <p class="text-muted small mb-3">Programa complementario para pólizas de vehículos o financiamientos automotrices.</p>
-                        <ul class="list-unstyled ck mb-4">
-                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Cobertura de averías mecánicas de motor y transmisión</li>
-                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Deducible variable según antigüedad y kilometraje</li>
-                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Cobertura anual de hasta RD$ 1,200,000</li>
-                            <li class="d-flex gap-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Red de talleres autorizados a nivel nacional</li>
-                        </ul>
-                        <a href="#aliados" class="btn btn-s-out btn-sm"><i class="fas fa-arrow-right me-1" aria-hidden="true"></i>Más información</a>
-                    </div>
-                </article>
-            </div>
-            <div class="col-lg-6 ao">
-                <article class="pc bg-white h-100">
-                    <div class="pimg elec"><i class="fas fa-tv bic" aria-hidden="true"></i><span class="ptag">Electrodomésticos</span></div>
-                    <div class="p-4">
-                        <h3 class="h5 fw-bold mb-2">Garantía Extendida para Electrodomésticos</h3>
-                        <p class="text-muted small mb-3">Solución complementaria para pólizas de hogar, créditos hipotecarios y retail.</p>
-                        <ul class="list-unstyled ck mb-4">
-                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Cubre averías por mal funcionamiento</li>
-                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Sin deducible para el cliente final</li>
-                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Cobertura anual de hasta RD$ 500,000</li>
-                            <li class="d-flex gap-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Gestión de reclamos rápida y transparente</li>
-                        </ul>
-                        <a href="#aliados" class="btn btn-s-out btn-sm"><i class="fas fa-arrow-right me-1" aria-hidden="true"></i>Más información</a>
-                    </div>
-                </article>
-            </div>
-            
-        </div>
-    </div>
-</section> -->
+</section> 
 <section id="productos" aria-label="Productos" style="padding:90px 0">
     <div class="container">
         <header class="text-center mb-5 ao">
@@ -488,7 +1071,7 @@
                 <article class="pc bg-white h-100">
                     <div class="pimg auto"><img src="./img/garantia_mecanica.jpg" style="width: 100%;" alt="taller mecanico con auto clasico rojo en reparacion"><span class="ptag">Automotriz</span></div>
                     <div class="p-4">
-                        <h3 class="h5 fw-bold mb-2">Garantía Mecanica Extendida</h3>
+                        <h3 class="h5 fw-bold mb-2">Garantía Mécanica Extendida</h3>
                         <p class="text-muted small mb-3">Programa complementario para pólizas de vehículos o financiamientos automotrices.</p>
                         <ul class="list-unstyled ck mb-4">
                             <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Cobertura de averías mecánicas de motor y transmisión</li>
@@ -554,44 +1137,59 @@
                     </div>
                 </article>
             </div>
-            <!-- INSPECCIÓN TÉCNICA VEHICULAR (NUEVO) -->
-            <!-- <div class="col-lg-4 ao">
-                <article class="pc bg-white h-100">
-                    <div class="pimg" style="background:linear-gradient(135deg,#0e1f3a,#1a3a2e)">
-                        <i class="fas fa-magnifying-glass bic" aria-hidden="true"></i>
-                        <span class="ptag" style="background:var(--grad-gold)">Inspección</span>
+
+        </div>
+
+    </div>
+<!-- ========== BANNER SEGUROS PARA AUTOS ========== -->
+<div class="banner-auto" id="bannerAuto">
+    <!-- <div class="banner-auto-accent" aria-hidden="true"></div> -->
+    <div class="container position-relative" style="z-index:2">
+        <div class="banner-auto-card">
+
+            <!-- Izquierda -->
+            <div class="d-flex align-items-center gap-3 gap-lg-4">
+                <!-- Sello -->
+                <div class="banner-auto-seal-wrap">
+                    <div class="banner-auto-seal">
+                        <i class="fas fa-car"></i>
                     </div>
-                    <div class="p-4">
-                        <h3 class="h5 fw-bold mb-2">Inspección Técnica Vehicular</h3>
-                        <p class="text-muted small mb-3">
-                            Evita vicios o fallas ocultas de motor, transmisión, sistema eléctrico o reparaciones deficientes antes de adquirir un vehículo.
-                        </p>
-                        <ul class="list-unstyled ck mb-3">
-                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Servicio a domicilio</li>
-                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Inspección de más de 90 puntos de motor, transmisión y sistema eléctrico</li>
-                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Prueba de manejo incluida</li>
-                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Revisión de códigos de falla con Scanner OBD</li>
-                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Asesoría técnica personalizada</li>
-                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Informe digital con fotos y videos por Mecánico SAM experto</li>
-                            <li class="d-flex gap-2 mb-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Reporte CarFax (opcional, si aplica)</li>
-                            <li class="d-flex gap-2 small"><i class="fas fa-check-circle mt-1" aria-hidden="true"></i>Descuentos de hasta 12.5% en mantenimientos preventivos y correctivos</li>
-                        </ul>
+                    <svg class="auto-seal-ring" viewBox="0 0 100 100" aria-hidden="true">
+                        <circle cx="50" cy="50" r="46" fill="none" stroke-width="1.5" stroke-dasharray="4 3"/>
+                    </svg>
+                </div>
 
-                        <div class="d-flex align-items-center gap-2 mb-3 p-2 rounded-3" style="background:rgba(0,183,176,.06);border:1px solid rgba(0,183,176,.15)">
-                            <i class="fas fa-certificate" style="color:var(--c1);font-size:1.1rem" aria-hidden="true"></i>
-                            <span class="small fw-medium" style="color:var(--c2)">Avalados por Pro Consumidor No. 065/2021</span>
-                        </div>
-                        <a href="#aliados" class="btn btn-s-out btn-sm"><i class="fas fa-arrow-right me-1" aria-hidden="true"></i>Más información</a>
-
-
-                     
+                <!-- Texto -->
+                <div>
+                    <div class="d-flex align-items-center gap-2 mb-1">
+                        <span class="banner-auto-dot" aria-hidden="true"></span>
+                        <span class="banner-auto-overline">Protección Vehicular</span>
+                        <span class="banner-auto-tag">FULL</span>
                     </div>
-                </article>
-            </div> -->
+                    <h2 class="banner-auto-heading">
+                        Seguros para Autos — <span class="banner-auto-hl">Cobertura Total</span>
+                    </h2>
+                </div>
+            </div>
+
+            <!-- Derecha -->
+            <a href="https://wa.me/1809333755" class="btn-auto">
+                <div class="btn-auto-icon">
+                    <i class="fas fa-shield-halved"></i>
+                </div>
+                <div class="btn-auto-text">
+                    <small>Solicita tu</small>
+                    <strong>Cotización</strong>
+                </div>
+                <i class="fas fa-arrow-right btn-auto-arrow"></i>
+            </a>
 
         </div>
     </div>
+</div>
+<!-- ========== FIN BANNER ========== -->
 </section>
+
 
 <!-- ===== PROCESS ===== -->
 <section style="background:var(--grad-hero);padding:90px 0" id="proceso" aria-label="Proceso">
